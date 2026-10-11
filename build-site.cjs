@@ -41,7 +41,7 @@ const tripSchema = t => ({
     '@type':'ListItem', position:d.day, name:`Day ${d.day}: ${d.title}`, description:`${d.path}. ${d.text} ${d.stay}`
   }))}}:{})
 });
-const seo = (title, description, file, graph=[]) => `<title>${esc(title)}</title>
+const seo = (title, description, file, graph=[]) => `<title>${esc(data.brand)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#244f40">
