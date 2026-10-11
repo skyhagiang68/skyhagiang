@@ -66,3 +66,17 @@
  #discover .travel-article-read{font-size:.8rem}
  .blog-modal-content>img{display:block;width:100%;height:clamp(165px,28svh,235px);object-fit:cover}
 }
+.travel-article-media{position:relative;overflow:hidden}
+.travel-article-badge{position:absolute;left:12px;bottom:12px;padding:5px 10px;border-radius:999px;background:#112d25d9;color:#f5f3e7;font:700 .68rem/1.2 "DM Sans",sans-serif;letter-spacing:.05em;backdrop-filter:blur(6px);border:1px solid #ffffff38}
+.blog-modal-content>img{display:block;width:100%;height:clamp(240px,40vh,410px);object-fit:cover}
+.blog-modal-media-section{margin-top:26px;padding-top:22px;border-top:1px solid #dfe6dc}
+.blog-modal-media-section h3{margin:0 0 14px;color:#284a3c;font:700 1.28rem/1.25 "Playfair Display",Georgia,serif}
+.blog-modal-videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.blog-modal-video-card,.blog-modal-photo-card{margin:0;border:1px solid #dfe6dc;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 20px #17382d0f}
+.blog-modal-video-card video{display:block;width:100%;max-height:360px;background:#0d221c;object-fit:cover}
+.blog-modal-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.blog-modal-photo-card img{display:block;width:100%;height:200px;object-fit:cover}
+.blog-modal-video-card figcaption,.blog-modal-photo-card figcaption{padding:10px 13px;color:#4a6358;font-size:.83rem;line-height:1.5}
+.blog-modal-cta{margin-top:26px;padding-top:18px;border-top:1px solid #dfe6dc;display:flex;justify-content:flex-start}
+.blog-modal-cta .pill{display:inline-flex;align-items:center;padding:12px 20px;border-radius:10px;background:#315b47;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem}
+

@@ -19,13 +19,6 @@ const polish = content => String(content)
   .replaceAll('Demo details · not active', 'Travel support available by request')
   .replaceAll('Demo contact details · replace with your official Gmail and WhatsApp before launch.', '')
   .replaceAll('Demo form · creates a draft only. No enquiry is sent and no booking is confirmed.', 'Prepare your enquiry below. Review the details before sending them to our travel team.')
-  .replaceAll('Choose your loop departure date and group size. If travelling from Hanoi, add your pickup needs.', 'Tell us your dates and group size. Add Hanoi pickup if needed.')
-  .replaceAll('Request your trip', 'Share your plan')
-  .replaceAll('Dates, travellers, route and Hanoi pickup.', 'Dates, route and group size.')
-  .replaceAll('Confirm the quote', 'Review the quote')
-  .replaceAll('Per-person price, included coach, other services and cancellation terms in writing.', 'Price, coach and extras explained.')
-  .replaceAll('Agree the deposit', 'Confirm your place')
-  .replaceAll('Amount, due date and verified payment recipient confirmed before payment.', 'Deposit and recipient verified first.')
   .replaceAll('Deposit amount and payment method are not yet published. This site takes no payments.', 'Your guide confirms the deposit amount, payment method and booking conditions before payment.')
   .replaceAll('This demonstration website does not take deposits.', 'The deposit amount, payment method and booking conditions are confirmed directly before payment.')
   .replaceAll('demo-contact-note', 'contact-note');
@@ -96,14 +89,17 @@ const page = (title,description,file,body,graph=[],bodyClass='route-page') => `<
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style id="background-base">html,body{background:#0a1d24!important}body::before,body::after{content:none!important}</style>
 ${seo(title,description,file,graph)}${fonts}
-<link rel="stylesheet" href="nho-que-background.css"><link rel="stylesheet" href="client-tours.css"><link rel="stylesheet" href="site-experience.css">
+<link rel="stylesheet" href="nho-que-background.css"><link rel="stylesheet" href="travel-blog.css"><link rel="stylesheet" href="client-tours.css"><link rel="stylesheet" href="site-experience.css">
 <script src="nature-background-v7.js" defer></script><script src="background-init.js" defer></script></head>
 <body class="${bodyClass}"><a class="skip-link" href="#main-content">Skip to content</a>${nav}<main id="main-content" class="route-shell">${body}</main>${footer}<script src="tour-data.js" defer></script><script src="app.js" defer></script><script src="travel-blog.js" defer></script><script src="booking-journey.js" defer></script><script src="site-experience.js" defer></script></body></html>`;
-const dayHtml = (d,i) => `<details class="itinerary-day" ${i===0?'open':''}><summary><span>Day ${d.day}</span><h3>${esc(d.title)}</h3><b aria-hidden="true">+</b></summary><div class="itinerary-day-copy"><p class="day-route">${esc(d.path)}</p><p>${esc(d.text)}</p><p class="day-stay">${esc(d.stay)}</p></div></details>`;
+const dayHtml = (t,d,i) => {
+  const visual = sections.dayVisuals?.[t.id]?.[d.day];
+  return `<details class="itinerary-day" ${i===0?'open':''}><summary><span>Day ${d.day}</span><h3>${esc(d.title)}</h3><b aria-hidden="true">+</b></summary><div class="itinerary-day-copy"><p class="day-route">${esc(d.path)}</p><p>${esc(d.text)}</p><p class="day-stay">${esc(d.stay)}</p>${visual?`<figure class="day-node-visual"><img src="${visual.src}" alt="${esc(visual.alt)}" width="800" height="533" loading="lazy"><figcaption>${esc(visual.caption)}</figcaption></figure>`:''}</div></details>`;
+};
 for (const t of data.tours) {
   const body = `<nav class="route-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span> / </span><a href="packages.html">Tours</a><span> / ${esc(t.days)}</span></nav>
 <header class="route-hero surface"><div><div class="kicker">Start &amp; finish · Ha Giang</div><h1>${esc(t.title)}</h1><p>${esc(t.intro)}</p><div class="route-chips"><span>${esc(t.days)}</span><span>Du Gia · Dong Van · Yen Minh</span><span>${esc(t.price)}</span></div><p class="small-note">${esc(data.priceNote)}</p><a class="pill" href="${enquiryUrl(t)}">Request this itinerary ↗</a></div><figure><img src="assets/${t.image}" width="800" height="533" alt="${esc(t.imageAlt)}" fetchpriority="high"><figcaption>Illustrative northern landscape; not a photograph of a specific itinerary stop.</figcaption></figure></header>
-<div class="route-layout"><section class="surface itinerary" aria-labelledby="itinerary-title"><div class="kicker">Day by day</div><h2 id="itinerary-title">Your proposed journey</h2><p class="route-disclaimer">${esc(data.routeNote)}</p>${t.kind==='private'?sections.privatePlan():t.itinerary.map(dayHtml).join('\n')}${sections.transfer()}${sections.services()}</section>
+<div class="route-layout"><section class="surface itinerary" aria-labelledby="itinerary-title"><div class="kicker">Day by day</div><h2 id="itinerary-title">Your proposed journey</h2><p class="route-disclaimer">${esc(data.routeNote)}</p>${t.kind==='private'?sections.privatePlan():t.itinerary.map((d,i)=>dayHtml(t,d,i)).join('\n')}${sections.transfer()}${sections.services()}</section>
 <aside class="route-sidebar surface"><h2>Is this your route?</h2><p>${esc(t.fit)}</p><h3>Highlights</h3><ul>${t.highlights.map(h=>`<li>${esc(h)}</li>`).join('')}</ul><h3>Overnight plan</h3><p>${esc(t.overnights)}</p>${confirmation()}<a class="pill" href="${enquiryUrl(t)}">Request a quote ↗</a><a class="other-tour" href="${detailUrl(data.tours.find(o=>o.id!==t.id))}">Compare the ${esc(data.tours.find(o=>o.id!==t.id).days)} route →</a></aside></div>
 ${faqs()}${sources()}`;
   const breadcrumbs = {'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:url('')},{'@type':'ListItem',position:2,name:'Tour itineraries',item:url('packages.html')},{'@type':'ListItem',position:3,name:t.value,item:url(detailUrl(t))}]};
