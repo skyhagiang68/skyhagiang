@@ -18,42 +18,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - uses: actions/configure-pages@v5
-      - name: Add cache-busted tour interactions, responsive layout, and panorama background
+      - name: Build crawlable content and versioned assets
         env:
           PAGE_SHA: ${{ github.sha }}
+        run: node build-site.cjs
+      - name: Verify content and existing motion safeguards
         run: |
-          python - <<'PY'
-          from pathlib import Path
-          import os
-          import re
-
-          sha = os.environ["PAGE_SHA"]
-          head = (
-              f'<link rel="stylesheet" href="tour-carousel.css?v={sha}">'
-              f'<link rel="stylesheet" href="mobile-layout.css?v={sha}">'
-              f'<link rel="stylesheet" href="travel-blog.css?v={sha}">'
-              f'<link rel="stylesheet" href="booking-journey.css?v={sha}">'
-              "</head>"
-          )
-          scripts = (
-              f'<script src="tour-interactions.js?v={sha}"></script>'
-              f'<script src="travel-blog.js?v={sha}"></script>'
-              f'<script src="booking-journey.js?v={sha}"></script>'
-              "</body>"
-          )
-          assets = "landscape.css|natural-theme.css|natural-sales-layout.css|mobile-polish.css|nho-que-background.css|nature-background-v7.js|background-init.js|app.js"
-          for name in ("index.html", "packages.html"):
-              page = Path(name)
-              source = page.read_text(encoding="utf-8")
-              source = re.sub(
-                  rf'(href|src)="({assets})(?:\?[^\"]*)?"',
-                  lambda match: f'{match[1]}="{match[2]}?v={sha}"', source,
-              )
-              if name == "index.html":
-                  source = source.replace("</head>", head).replace("</body>", scripts)
-              page.write_text(source, encoding="utf-8")
-          PY
+          node tests/client-content.test.cjs
+          node tests/background-startup.test.cjs
+          node tests/booking-journey.test.cjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
