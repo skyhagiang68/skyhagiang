@@ -282,3 +282,11 @@
  .review-blog-cover img{height:210px}
 }
 
+/* Experience articles stay in compact horizontal rails instead of creating a long mobile feed. */
+.review-stories-grid,.video-reels-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(260px,calc((100% - 36px)/3));overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:3px 2px 14px;scrollbar-width:thin;scrollbar-color:#9bbeb3 transparent}
+.review-blog-card,.video-reel-card{min-width:0;scroll-snap-align:start}
+.review-story-body h4,.video-reel-copy h4{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.review-story-body p,.video-reel-copy p{-webkit-line-clamp:2}
+@media(max-width:1000px){.review-stories-grid,.video-reels-grid{grid-auto-columns:minmax(300px,calc((100% - 18px)/2))}}
+@media(max-width:800px){.review-stories-grid,.video-reels-grid{grid-auto-columns:minmax(78vw,1fr);gap:12px;margin-right:-2px}.review-blog-cover img{height:165px}.review-story-body{padding:13px}.review-story-body h4{font-size:1.04rem}.review-story-body p{font-size:.8rem;line-height:1.45}.video-reel-player video{height:170px}.video-reel-copy{padding:11px 12px}.video-reel-copy h4{font-size:.95rem}.video-reel-copy p{font-size:.76rem}}
+
