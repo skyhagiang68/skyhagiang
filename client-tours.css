@@ -1,7 +1,7 @@
 /* Client itinerary content: readable surfaces over the existing animated panorama. */
 :root{--route-ink:#244a3b;--route-muted:#52685c;--route-sage:#527b69;--route-cream:#faf8f1}
 .contact-float.demo-contact{display:none}
-.demo-contact-note{grid-column:1/-1;border-left:3px solid #b58d40;padding:8px 12px;background:#f4f0e5;font-size:.84rem!important;line-height:1.5}
+.contact-note{grid-column:1/-1;border-left:3px solid #b58d40;padding:8px 12px;background:#f4f0e5;font-size:.84rem!important;line-height:1.5}
 #status textarea{min-height:160px!important;height:auto!important;margin:8px 0;font-size:.82rem}
 .contactbox:has(.demo-contact-note){row-gap:16px}
 .compact-collection .package-grid{gap:24px;padding:16px 20px 26px;scroll-padding-inline:20px}

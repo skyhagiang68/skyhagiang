@@ -73,7 +73,7 @@ form.addEventListener('submit', e => {
   const status = document.querySelector('#status');
   if (window.SkyTours?.contact.demo) {
     const note = document.createElement('p');
-    note.textContent = 'Demo draft ready. Nothing has been sent. Copy this enquiry for later.';
+    note.textContent = 'Your enquiry is ready. Nothing has been sent yet — review the details and copy it to contact our travel team.';
     const draft = document.createElement('textarea');
     draft.readOnly = true;
     draft.value = body;

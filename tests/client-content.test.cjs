@@ -69,7 +69,8 @@ for(const page of ['itinerary.html','story.html','gallery.html','contact.html'])
 if(data.contact.demo){
   assert.ok(!/84948242421|sky@traverl\.com/.test(home));
   assert.ok(home.includes('hello@example.com'));
-  assert.ok(home.includes('Demo form'));
+  assert.ok(home.includes('Prepare your enquiry below'));
+  assert.ok(!/Demo|Illustrative|not a customer|not a photograph/.test(home));
 }
 for(const t of standard){
   assert.equal(t.itinerary.length,t.durationDays);

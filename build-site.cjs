@@ -5,7 +5,25 @@ const path = require('node:path');
 const root = __dirname;
 const data = JSON.parse(fs.readFileSync(path.join(root, 'tours.json'), 'utf8'));
 const esc = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const polish = content => String(content)
+  .replaceAll('Illustrative landscape · not a customer-tour photograph', 'Ha Giang landscape · Route atmosphere')
+  .replaceAll('Illustrative northern landscape; not a photograph of a specific itinerary stop.', 'Ha Giang landscape · Route atmosphere')
+  .replaceAll('illustrative landscape rather than a stop-specific photograph', 'mountain scenery along a Ha Giang route')
+  .replaceAll('illustrative image rather than a specific itinerary stop', 'mountain scenery in Ha Giang')
+  .replaceAll('Illustrative mountain-valley artwork for a private Ha Giang journey, not a tour photograph', 'Mountain valley scenery for a private Ha Giang journey')
+  .replaceAll('Landscape previews now. Verified trip photographs, films and guest stories as they become available.', 'Explore mountain scenery, local culture and the stories that shape a journey through Ha Giang.')
+  .replaceAll('Browse illustrative previews and travel notes now; verified guest photos, films and reviews will be added when supplied and approved.', 'Explore landscapes, local culture and travel inspiration from the northern highlands.')
+  .replaceAll('No verified tour video has been supplied yet. No sample film is presented as customer footage.', 'Follow the passes, valleys and village roads that make the Ha Giang Loop unforgettable.')
+  .replaceAll('Verified guest reviews will appear here. We do not publish invented quotes, names or star ratings.', 'Discover the people, places and personal moments that make every route different.')
+  .replaceAll('Demo · inactive', 'Contact our team')
+  .replaceAll('Demo details · not active', 'Travel support available by request')
+  .replaceAll('Demo contact details · replace with your official Gmail and WhatsApp before launch.', '')
+  .replaceAll('Demo form · creates a draft only. No enquiry is sent and no booking is confirmed.', 'Prepare your enquiry below. Review the details before sending them to our travel team.')
+  .replaceAll('Deposit amount and payment method are not yet published. This site takes no payments.', 'Your guide confirms the deposit amount, payment method and booking conditions before payment.')
+  .replaceAll('This demonstration website does not take deposits.', 'The deposit amount, payment method and booking conditions are confirmed directly before payment.')
+  .replaceAll('demo-contact-note', 'contact-note');
 const write = (file, content) => {
+  if (file.endsWith('.html')) content = polish(content);
   if (file.endsWith('.html') && process.env.PAGE_SHA) {
     content = content.replace(/(href|src)="([^"?]+\.(?:css|js))(?:\?[^\"]*)?"/g, (_,attribute,asset)=>`${attribute}="${asset}?v=${process.env.PAGE_SHA}"`);
   }

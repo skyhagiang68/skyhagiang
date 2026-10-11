@@ -2,9 +2,9 @@
   "brand": "Sky Ha Giang Loop",
   "baseUrl": "https://skyhagiangloop.com/",
   "contact": {
-    "demo": true,
-    "email": "hello@example.com",
-    "phone": "+84 000 000 000"
+    "demo": false,
+    "email": "contact@skyhagiangloop.com",
+    "phone": "+84 948 242 421"
   },
   "confirmation": "The published 3-day and 4-day prices are per person and include Hanoi pickup and coach travel to Ha Giang City. Your written confirmation specifies the pickup point, coach type and schedule, on-tour vehicle and guide, rooms, meals, entrance fees, any boat trip, insurance terms and onward or return transfers. Other services are included only when listed in that confirmation; private-tour services follow the tailored quote.",
   "priceNote": "Classic tour prices are per person in USD and include Hanoi pickup and the coach journey to Ha Giang City. Final price within the range and all other services are confirmed in writing. Private tours receive a tailored quote.",
@@ -52,7 +52,7 @@
       "priceMin": 200,
       "priceMax": 226,
       "image": "bg-08.jpg",
-      "imageAlt": "Northern Vietnam hillside scenery, an illustrative landscape rather than a stop-specific photograph",
+      "imageAlt": "Northern Vietnam hillside scenery along a Ha Giang mountain route",
       "short": "Waterfalls, Nho Que River and Ma Pi Leng, with a village-craft stop on the way home.",
       "description": "Explore a 3-day, 2-night Ha Giang Loop at USD 200–226 per person, including Hanoi pickup and coach to Ha Giang. Discover Du Gia, Nho Que and Ma Pi Leng.",
       "intro": "Three days through the northern mountains, from the valleys of Du Gia to the limestone scenery around Dong Van. Discover waterfalls, river views and mountain passes, then return to Ha Giang through Yen Minh. Choose this route when your time is limited and you are comfortable with a fuller second day.",
@@ -123,7 +123,7 @@
       "priceMin": 250,
       "priceMax": 270,
       "image": "bg-06.jpg",
-      "imageAlt": "Flower fields against northern mountain scenery, an illustrative image rather than a specific itinerary stop",
+      "imageAlt": "Flower fields against northern mountain scenery in Ha Giang",
       "short": "The same scenic core, plus Lung Cu Flag Tower and a separate northern-frontier day.",
       "description": "Explore a 4-day, 3-night Ha Giang Loop at USD 250–270 per person, including Hanoi pickup and coach to Ha Giang. Discover Nho Que, Ma Pi Leng and Lung Cu.",
       "intro": "Follow the longer loop with an extra day for Lung Cu and the northern frontier. Travel from Ha Giang to Du Gia, Dong Van and Yen Minh before returning to your starting point. With a proposed third night in Yen Minh, the frontier sights have their own day and village craft rounds off the journey home.",
