@@ -199,10 +199,16 @@
  .landscape-preview{gap:10px}.landscape-preview img{height:150px;border-radius:8px}.landscape-preview figcaption{font-size:.65rem}
  .proof-status{grid-template-columns:1fr;gap:14px}.proof-status h3{font-size:1.06rem}.proof-status p{font-size:.82rem}
  .experience-home #discover .travel-blog{padding:16px}.experience-home #discover .travel-blog-head{gap:10px;align-items:center}.experience-home .travel-blog-head h2{font-size:1.45rem}.experience-home #discover .travel-blog-head .kicker{font-size:.56rem;letter-spacing:.08em}.experience-home .travel-article-copy{padding:16px}.experience-home .travel-article-copy p{font-size:.87rem}
- .booking-layout{grid-template-columns:1fr;gap:22px}.contact-channels{grid-template-columns:1fr 1fr;padding:12px;gap:12px;font-size:.8rem}
+ .booking-layout{grid-template-columns:1fr;gap:18px}.contact-channels{grid-template-columns:1fr 1fr;padding:12px;gap:10px;font-size:.78rem}
  .deposit-flow{gap:12px;margin:18px 0}.deposit-flow p{font-size:.8rem}.deposit-flow strong{font-size:.86rem}
- .experience-home .form{gap:12px}.experience-home .form label{font-size:.77rem}.experience-home .form input,.experience-home .form select{font-size:16px;padding:10px;min-height:46px}
- .experience-home .contact-tour{grid-column:1/-1}.experience-home .contact-guests{grid-column:1/-1}.experience-home .form textarea{min-height:76px}
+ .experience-home #contact .form{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+ .experience-home #contact .contact-field,.experience-home #contact .contact-tour,.experience-home #contact .contact-guests,.experience-home #contact .contact-field-wide{grid-column:1/-1}
+ #contact .contact-field{gap:5px}
+ #contact .form label{font-size:.78rem;line-height:1.35}
+ #contact .form input,#contact .form select,#contact .form textarea{font-size:16px;padding:11px 12px;min-height:46px;border-radius:10px}
+ #contact .form textarea{min-height:88px;line-height:1.45}
+ #contact .form .pill{min-height:48px;border-radius:10px;font-size:.86rem}
+ #contact .contact-note{padding:10px 12px;font-size:.78rem!important;line-height:1.5}
  .experience-home .site-footer{padding:20px 16px;margin-top:18px}.experience-home .footer-grid{grid-template-columns:1fr 1fr;gap:22px 14px}.experience-home .footer-brand{grid-column:1/-1}
  .route-page .comparison-cards{grid-template-columns:1fr}.route-page .transfer-stops{gap:6px}.route-page .surface{padding:16px}
 }
