@@ -125,11 +125,13 @@
 .contact-channels span,.contact-channels a{overflow-wrap:anywhere}
 .contact-channels b,.contact-channels small{display:block}
 .contact-channels small{font-size:.73rem;color:#6c745c;margin-top:3px}
-.deposit-flow{list-style:none;padding:0;margin:22px 0;display:grid;gap:16px}
-.deposit-flow li{display:flex;gap:12px;align-items:flex-start}
+.deposit-flow{list-style:none;padding:0;margin:16px 0 10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.deposit-flow li{display:block;padding:12px 10px;border:1px solid #dce5d8;border-radius:10px;background:#f6f8f1}
 .deposit-flow li>span{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:8px;background:#e3eadb;color:#7d6834;font-size:.74rem;font-weight:700}
-.deposit-flow strong{font-size:.92rem;color:#2b5340}
-.deposit-flow p{font-size:.85rem;margin:5px 0 0;line-height:1.55}
+.deposit-flow li>span{width:28px;height:28px;margin-bottom:8px;border-radius:50%}
+.deposit-flow strong{display:block;font-size:.8rem;line-height:1.25;color:#2b5340}
+.deposit-flow p{font-size:.73rem;margin:5px 0 0;line-height:1.4;color:#66776b}
+.booking-terms-note{margin:0;line-height:1.45}
 .experience-home .form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;min-width:0}
 .experience-home .contact-field{display:grid;gap:7px;min-width:0}
 .experience-home .contact-field-wide{grid-column:1/-1}
@@ -200,7 +202,7 @@
  .proof-status{grid-template-columns:1fr;gap:14px}.proof-status h3{font-size:1.06rem}.proof-status p{font-size:.82rem}
  .experience-home #discover .travel-blog{padding:16px}.experience-home #discover .travel-blog-head{gap:10px;align-items:center}.experience-home .travel-blog-head h2{font-size:1.45rem}.experience-home #discover .travel-blog-head .kicker{font-size:.56rem;letter-spacing:.08em}.experience-home .travel-article-copy{padding:16px}.experience-home .travel-article-copy p{font-size:.87rem}
  .booking-layout{grid-template-columns:1fr;gap:18px}.contact-channels{grid-template-columns:1fr 1fr;padding:12px;gap:10px;font-size:.78rem}
- .deposit-flow{gap:12px;margin:18px 0}.deposit-flow p{font-size:.8rem}.deposit-flow strong{font-size:.86rem}
+ .deposit-flow{grid-template-columns:1fr;gap:8px;margin:16px 0 10px}.deposit-flow li{display:flex;align-items:flex-start;gap:10px;padding:10px}.deposit-flow li>span{margin:0;width:27px;height:27px}.deposit-flow p{font-size:.74rem;margin-top:3px}.deposit-flow strong{font-size:.82rem}
  .experience-home #contact .form{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
  .experience-home #contact .contact-field,.experience-home #contact .contact-tour,.experience-home #contact .contact-guests,.experience-home #contact .contact-field-wide{grid-column:1/-1}
  #contact .contact-field{gap:5px}
