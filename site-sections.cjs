@@ -1,4 +1,4 @@
-// Shared, crawlable presentation sections with standalone clickable guest experience blog posts, tour films and route photography.
+// Shared, crawlable presentation sections with one unified horizontal blog rail for guest experiences, tour films and route journals.
 module.exports = function sections(data, helpers) {
   const {esc, card, faqs, enquiryUrl} = helpers;
   const standard = data.tours.filter(t => t.kind !== 'private');
@@ -51,178 +51,187 @@ module.exports = function sections(data, helpers) {
     }
   };
 
-  // 12 standalone single-image guest experience blog cards (clicking any card opens its full article modal)
-  const guestBlogPosts = [
+  // Unified 20 horizontal Blog Cards combining Guest Stories, Real Tour Films & Route Journals
+  const unifiedBlogPosts = [
     {
       id: 'du-gia-rain-trail',
-      badge: 'Guest Story · Group Loop',
-      route: 'Du Gia Forest Trail',
+      badge: '▶ Tour Film · Guest Story',
+      route: 'Du Gia Forest Trail · Group Loop',
       src: 'assets/up/2aOboR4nWeTJ7gB43eEuhXha6aSRwRuzxtnWBrgu.jpg',
       alt: 'Group of eight international travellers and local Easy Rider guide smiling in colorful rain ponchos on a lush forest trail',
       title: 'Rain Ponchos & Easy Rider Spirit on the Trail to Du Gia',
-      excerpt: 'When a passing mountain shower drifted across the valley trail, our local Easy Riders handed out colorful ponchos and kept the whole group of eight laughing together.',
-      author: '8 International Riders & Local Easy Rider Crew'
+      excerpt: 'When a sudden highland shower rolled across the Du Gia valley trail, our local Easy Riders turned a misty walk into the most unforgettable bonding moment of the trip.'
     },
     {
       id: 'du-gia-waterfall-swim',
-      badge: 'Guest Experience · Day 1 / Day 2',
-      route: 'Du Gia Emerald Waterfall',
+      badge: '▶ Tour Film · Waterfall Swim',
+      route: 'Du Gia Emerald Waterfall · Day 1 / Day 2',
       src: 'assets/up/2aOboR4nfO5xPDgOU0G5mLtJY1ZVEL78WvIAU1Ls.jpg',
       alt: 'Travellers swimming and relaxing on natural rocks in the crystal-clear emerald pool at Du Gia Waterfall',
-      title: 'Afternoon Swim in the Crystal-Clear Pool at Du Gia Waterfall',
-      excerpt: 'Trading riding jackets and helmets for an unhurried afternoon swimming in cool jade-green mountain water right beneath the forest cascade.',
-      author: 'Du Gia Valley Afternoon Stop'
+      title: 'Afternoon Swim & Cliff Jumping at Du Gia Emerald Waterfall',
+      excerpt: 'Trading riding jackets and helmets for an unhurried afternoon swimming in cool jade-green mountain water right beneath the forest cascade.'
     },
     {
       id: 'ma-pi-leng-cliff-rock',
-      badge: 'Guest Story · Skywalk Viewpoint',
-      route: 'Ma Pi Leng Cliff Ledge',
+      badge: 'Skywalk Viewpoint · Guest Story',
+      route: 'Ma Pi Leng Cliff Ledge · High Pass',
       src: 'assets/up/2aOboR4nYY6yBNcvdmh6PWhFPYpfmpADRdrlka5Q.jpg',
       alt: 'Traveller standing confidently on the overhanging Ma Pi Leng cliff rock under a blue sky with the Nho Que River canyon below',
       title: 'Standing on the Overhanging Cliff Ledge Above Ma Pi Leng Gorge',
-      excerpt: 'Our local driver timed our morning hike so the clouds lifted right as we stepped onto the iconic stone ledge high above the Nho Que canyon.',
-      author: 'Ma Pi Leng Skywalk Walk'
+      excerpt: 'How our local guide timed our morning hike so the valley clouds parted right as we stepped onto the iconic stone ledge above the Nho Que canyon.'
     },
     {
       id: 'finisher-jersey-viewpoint',
-      badge: 'Guest Review · Pass Panorama',
-      route: 'Karst Plateau Rest Stop',
+      badge: '▶ Tour Film · Viewpoint Cafe',
+      route: 'Karst Plateau Rest Stop · Live Music',
       src: 'assets/up/2aOboR4nWwP7uSFESiAGGshlHN0s71HFXYNr1qiW.jpg',
       alt: 'Traveller wearing a black and yellow #9 FINISHER MOT HAI BA DZO jersey holding an iced coffee at a mountain viewpoint railing',
       title: 'Earning the #9 Finisher “Một Hai Ba, Dzô!” Jersey Over Iced Coffee',
-      excerpt: 'Celebrating the mountain passes at a wooden balcony railing with a cold Vietnamese coffee and a horizon of a thousand limestone peaks.',
-      author: 'Highland Viewpoint Terrace'
+      excerpt: 'From cold Vietnamese coffee on a cliffside balcony to guests singing “Valerie” live above a horizon of a thousand limestone peaks.'
     },
     {
       id: 'nho-que-0km-couples',
-      badge: 'Couples Story · Cultural Stop',
-      route: 'Nho Que 0Km Milestone',
+      badge: '▶ Tour Film · Couples Story',
+      route: 'Nho Que 0Km Milestone · Cultural Stop',
       src: 'assets/up/2aOboR4nad6dVkAjoiD1dSHjGYDX9jcGen8rtiMa.jpg',
       alt: 'Two couples wearing traditional embroidered Hmong outfits and holding a bamboo khen flute at the Nho Que 0Km milestone',
       title: 'Two Couples & the Bamboo Khèn Flute at the Nho Que 0Km Milestone',
-      excerpt: 'Pausing together before the canyon descent to wear traditional red-and-black embroidered Hmong attire beside the Nho Que 0Km stone marker.',
-      author: 'Two Couples Private Journey'
+      excerpt: 'Pausing together before the canyon descent to wear traditional red-and-black embroidered Hmong attire beside the Nho Que 0Km stone marker.'
     },
     {
       id: 'hmong-silver-brocade',
-      badge: 'Cultural Experience · Highland Craft',
-      route: 'Nho Que 0Km & Weaving Villages',
+      badge: 'Highland Craft · Cultural Guide',
+      route: 'Nho Que 0Km & Lung Tam Weaving',
       src: 'assets/up/2aOboR4naWkkZJT5h9dEFgVZUR6ZrEfMcHUbOWIK.jpg',
       alt: 'Young man and woman in traditional Hmong dress and silver necklace smiling beside the Nho Que 0Km stone marker',
       title: 'Hand-Embroidered Hmong Brocade & Silver Jewelry in the Mist',
-      excerpt: 'A closer look at the pleated skirts, woven patterns and traditional silver necklaces that carry centuries of highland identity.',
-      author: 'Cultural Portrait Experience'
+      excerpt: 'The living story behind pleated hemp skirts, indigo batik patterns and handcrafted silver neck rings across the northern highlands.'
     },
     {
       id: 'tu-san-canyon-bow',
-      badge: 'Guest Experience · Canyon Cruise',
+      badge: 'Canyon Cruise · Guest Story',
       route: 'Tu San Gorge · Nho Que River',
       src: 'assets/up/2aOboR4nYmzABAwyMILBDrp4hM8KFcVBqE0ZIJpw.jpg',
       alt: 'Traveller in a black windbreaker sitting on the green bow of a boat entering the vertical limestone cliffs of Tu San Canyon',
       title: 'Sitting on the Bow Entering the 800-Meter Walls of Tu San Canyon',
-      excerpt: 'Down on the water, the scale of the landscape transforms completely as your wooden boat glides between sheer vertical limestone cliffs.',
-      author: 'Tu San Canyon Boat Excursion'
+      excerpt: 'Down on the water, the scale of the landscape transforms completely as your wooden boat glides between sheer vertical limestone cliffs.'
     },
     {
       id: 'nho-que-emerald-cruise',
-      badge: 'River Story · Day 2 Highlight',
-      route: 'Nho Que Emerald Waterway',
+      badge: 'River Guide · Day 2 Timing',
+      route: 'Nho Que Emerald Waterway · Boat Trip',
       src: 'assets/up/2aOboR4neEcIR8AbCOQjT58KrmoOr7kew7Q8ZPRg.jpg',
       alt: 'First-person view from the orange bow of a wooden boat gliding across the emerald green Nho Que River',
       title: 'First-Person on the Jade Waters of the Nho Que River',
-      excerpt: 'How our local guide sequenced the descent to the boat pier so we could glide across calm, glass-like emerald water without the midday rush.',
-      author: 'Nho Que River Boat Ride'
+      excerpt: 'How our local team sequences the descent to the boat pier so you glide across calm, glass-like emerald water without the midday rush.'
     },
     {
       id: 'lung-cu-motorbike-lineup',
       badge: '4-Day Route · Northern Frontier',
-      route: 'Base of Lung Cu Flag Tower',
+      route: 'Base of Lung Cu Flag Tower · Day 3',
       src: 'assets/up/2aOboR4naL7KDqIpcAUfw65EPCYylMSOvk35xVpI.jpg',
       alt: 'Traveller looking up at Lung Cu Flag Tower with a row of tour motorbikes parked at the base',
       title: 'Parking Our Motorbike Convoy Below Lung Cu Flag Tower on Day 3',
-      excerpt: 'Why choosing the 4-day itinerary for the dedicated northern frontier ride to Dragon Mountain was the best decision of our trip.',
-      author: '4-Day Frontier Riders'
+      excerpt: 'Why choosing the 4-day itinerary for the dedicated northern frontier ride to Dragon Mountain is a game-changer for your loop.'
     },
     {
       id: 'lung-cu-red-flag-summit',
-      badge: 'Frontier Experience · Far North',
-      route: 'Lung Cu Summit Viewpoint',
+      badge: 'Frontier Summit · Far North',
+      route: 'Lung Cu Summit Viewpoint · Day 3',
       src: 'assets/up/2aOboR4nYfBtl3HlbigCsFDvthVrKtbioLT1JLdY.jpg',
       alt: 'Traveller smiling with arms wide open beneath the red Vietnamese flag against misty mountain peaks',
       title: 'Arms Wide Open Beneath the Red Flag in the Northern Mist',
-      excerpt: 'Climbing the stone stairway to stand beneath the 54-square-meter Vietnamese flag as cool mountain clouds drifted across the border ridges.',
-      author: 'Lung Cu Summit Climb'
+      excerpt: 'Climbing the stone stairway to stand beneath the 54-square-meter Vietnamese flag as cool mountain clouds drift across the border ridges.'
     },
     {
       id: 'honda-winner-150-couple',
-      badge: 'Couple Story · On the Passes',
-      route: 'Highland Pass Pull-Off',
+      badge: '▶ Tour Film · Easy Rider POV',
+      route: 'Highland Pass Pull-Off · Motorbikes',
       src: 'assets/up/2aOboR4naZCz5GrwgowRXTTsTeivbB0n5Glf1h0i.jpg',
       alt: 'Couple in helmets and pink scarf posing playfully on a red Honda Winner GTR 150 motorbike on a misty mountain pass',
       title: 'Riding the Misty Passes Together on the Red Honda Winner 150',
-      excerpt: 'Helmets on, warm scarves wrapped tight, and plenty of relaxed stops along the ridge whenever the mountain views opened up.',
-      author: 'Couple Motorbike Journey'
+      excerpt: 'Helmets strapped, warm scarves wrapped tight, and why riding pillion behind a seasoned local Easy Rider lets you soak in every view.'
     },
     {
       id: 'cloud-hunting-camping-chair',
-      badge: 'Slow Travel · Cloud Hunting',
-      route: 'High Ridge Cloud Cafe',
+      badge: '▶ Tour Film · Cloud Hunting',
+      route: 'Sky Path Ridge · Cloud Lounge',
       src: 'assets/up/2aOboR4naNPuJg4QmkmtYyOLcDeowu2vDHqpvaBU.jpg',
       alt: 'Traveller relaxing in a green camping chair with drinks on a small table overlooking a sea of white clouds',
       title: 'Front-Row Camping Chairs Above a Sweeping Sea of Clouds',
-      excerpt: 'Whenever a morning cloud inversion filled the valley below the road, our drivers pulled over so we could sit back with a drink and watch the mist.',
-      author: 'Morning Cloud-Hunting Stop'
-    }
-  ];
-
-  const tourVideos = [
-    {
-      src: 'assets/up/2aOboR4nYCmPrbf9WUDTmlga7Bo9NTEoHpOfFz72.mp4',
-      tag: 'Du Gia Waterfall · Day 1 / Day 2',
-      title: 'Cliff Jumping & Swimming at Du Gia Emerald Pool',
-      text: 'Foreign travellers and local Easy Riders diving from the rock ledge into the refreshing emerald pool at Du Gia Waterfall after the valley ride.'
+      excerpt: 'Pulling up a canvas chair at a cliffside terrace with cold drinks in hand while a sea of white clouds fills the valley below.'
     },
     {
-      src: 'assets/up/2aOboR4nZB33dBhoTr8qtT1JXgM1tDiQ6mdemOZ6.mp4',
-      tag: 'Mountain Viewpoint Cafe · Rest Stop',
-      title: 'Singing “Valerie” Live Above the Limestone Peaks',
-      text: 'Two guests grabbing the open microphone at a cliffside rest stop for a spontaneous acoustic singalong with the karst ridges stretching out behind them.'
+      id: 'tham-ma-pass-hairpins',
+      badge: '▶ Drone Reel · Route Icon',
+      route: 'Yen Minh ↔ Dong Van · Tham Ma Pass',
+      src: 'assets/up/2aOboR4neBu8HaTpqQFxSQacLpplPICjzN5dvvJw.jpg',
+      alt: 'Aerial view of the iconic S-bends of Tham Ma Pass with red-flag-topped cars winding up the curves',
+      title: 'Red Flags on the Hairpins: Conquering the S-Curves of Tham Ma Pass',
+      excerpt: 'Where pack horses once tested their strength on steep limestone switchbacks, our bikes and support cars trace the most famous curves in Ha Giang.'
     },
     {
-      src: 'assets/up/2aOboR4nZBlmnr7yIZYdDWhpT7nTKDKCKuhp48wa.mp4',
-      tag: 'Homestay Evening · Community Vibes',
-      title: '“I Love Sky!” — Homestay Nightlife & Celebration',
-      text: 'After a family-style dinner in the valley, guests from around the world gather for music, laughter and a cheerful shout-out to the Sky Ha Giang team.'
+      id: 'lo-lo-chai-golden-hour',
+      badge: 'Frontier Village · Route Journal',
+      route: 'Lo Lo Chai Village · Beneath Lung Cu',
+      src: 'assets/up/2aOboR4neBu8HaTpqQFxSQUhmM1WhDzKZYnFlLM0.jpg',
+      alt: 'Golden sunset aerial over Lo Lo Chai ancient clay-roofed village with Lung Cu Flag Tower on the mountain peak behind',
+      title: 'Golden Hour Over Lo Lo Chai: The Ancient Village Beneath Lung Cu',
+      excerpt: 'Arriving as late-afternoon sunlight turns earthen walls, stone fences and yin-yang tiled roofs warm gold at the foot of Dragon Mountain.'
     },
     {
-      src: 'assets/up/2aOboR4nb0wdotbNklb4TZcYERubD64hMtOlK2am.mp4',
-      tag: 'Sky Path Viewpoint · Cloud Lounge',
-      title: 'Camping Chairs & Red Flag Breeze Above the Clouds',
-      text: 'Our international group taking a slow coffee break in camping chairs beneath the fluttering Vietnamese flag while clouds drift across the green canyon.'
+      id: 'ma-pi-leng-quiet-ledge',
+      badge: 'Canyon Overlook · Slow Travel',
+      route: 'Dong Van ↔ Meo Vac · Ma Pi Leng',
+      src: 'assets/up/2aOboR4neDghMxu6HZKIGGloYcaN67F2RB6vStjE.jpg',
+      alt: 'Traveller sitting on a rocky outcrop overlooking the Nho Que River canyon',
+      title: 'Quiet Moments on the Limestone Ledge: Slowing Down on Ma Pi Leng',
+      excerpt: 'Why our favourite memory on Ma Pi Leng Pass is sitting still for ten unhurried minutes watching cloud shadows drift across the gorge.'
     },
     {
-      src: 'assets/up/2aOboR4nZXHdiHhO9hj2oRjHXVSpSBp3SVE7YXfk.mp4',
-      tag: 'Easy Rider POV · Sunny Mountain Pass',
-      title: 'On the Back of the Bike: Clear Skies & Open Valleys',
-      text: 'First-person pillion view riding behind a local Easy Rider along a sunlit mountain pass guardrail with panoramic views of the Dong Van plateau.'
+      id: 'easy-rider-perspective',
+      badge: '▶ Tour Film · Local Guides',
+      route: 'Ha Giang Loop · Easy Rider Team',
+      src: 'assets/up/2aOboR4nagcfVadJvbIbYVY5KVWCnYg5IJmLqdnM.jpg',
+      alt: 'Local rider in green jacket and riding gloves smiling with arms open above a winding mountain pass',
+      title: 'Easy Rider Perspective: Why Local Drivers Make the Mountain Road',
+      excerpt: 'Meet the highland riders who grew up on these passes—handling every hairpin, fog bank and hidden viewpoint so you can travel stress-free.'
     },
     {
-      src: 'assets/up/2aOboR4naz2mGh2bgzxCf7Gnb3Z58InsfpsFHMJc.mp4',
-      tag: 'High Pass POV · Cloud Hunting',
-      title: 'Riding Straight Into the Rolling Mountain Mist',
-      text: 'Experiencing Ha Giang’s dramatic highland weather shifts as the motorbike glides along a high ridge road with clouds rolling directly over the peaks.'
+      id: 'stone-battlement-viewpoint',
+      badge: 'Panoramic Terrace · Route Guide',
+      route: 'Ma Pi Leng Corridor · Viewpoint',
+      src: 'assets/up/2aOboR4nakAGoIl4AnLpF34z0jbbKV8hL43WJeFs.jpg',
+      alt: 'Traveller standing at a stone battlement viewpoint overlooking the turquoise Nho Que River and terraced slopes',
+      title: 'The Stone Battlement Viewpoint: Terraced Slopes & the Nho Que Gorge',
+      excerpt: 'Spectacular wide-angle canyon views from a secure stone-walled terrace—ideal for guests who want iconic photos without exposed cliff edges.'
     },
     {
-      src: 'assets/up/2aOboR4nXS4uKJbLMd9VUCPOYts0F42fAYV0UtIO.mp4',
-      tag: 'Tham Ma Pass · Drone Reel',
-      title: 'From Above: The Legendary S-Curves Carved in Stone',
-      text: 'Vertical aerial footage looking straight down at the famous serpentine hairpins tucked deep between towering emerald canyon walls.'
+      id: 'quan-ba-open-horizons',
+      badge: 'Day 1 Journal · Highland Ascent',
+      route: 'Quan Ba & Duong Thuong Valleys',
+      src: 'assets/up/2aOboR4napgsKqnFPxXwKHEkq3Mxu2DZXobddT84.jpg',
+      alt: 'Traveller in black hoodie spreading arms wide above sunny green mountain valleys in Ha Giang',
+      title: 'Open Horizons: Breathing In the Crisp Air of Quan Ba & Duong Thuong',
+      excerpt: 'Leaving Ha Giang City behind and climbing through Heaven’s Gate into emerald valleys, cornfields and limestone cones on Day 1.'
     },
     {
-      src: 'assets/up/2aOboR4nX9ALrdwLm8CRB4fYU8Mlxj4lRm8FmUN6.mp4',
-      tag: 'Highland Village Trail · Seasonal Blossoms',
-      title: 'Walking the Stone Path Through Blooming Valley Flowers',
-      text: 'A peaceful walk along a village stone path lined with blooming pink and purple highland flowers leading toward a traditional tiled-roof home.'
+      id: 'frontier-group-convoy',
+      badge: 'Group Convoy · Rider Community',
+      route: 'Northern Frontier · Small Groups',
+      src: 'assets/up/2aOboR4naJn32rlt5jc4lGazTkIiyhOu4HcKKpns.jpg',
+      alt: 'Back view of traveller looking up at Lung Cu Flag Tower with a row of tour motorbikes parked at the base',
+      title: 'Two Wheels at the Frontier: How Our Small-Group Rides Stay Connected',
+      excerpt: 'How a lead guide, steady pacing and a sweep driver turn solo travellers, couples and friends into one tight-knit mountain crew.'
+    },
+    {
+      id: 'morning-cloud-inversions',
+      badge: 'Seasons & Weather · Route Guide',
+      route: 'Highland Ridges · Cloud Hunting',
+      src: 'assets/up/2aOboR4nYFnvIC8LFnKf6cvpEiMUYqkNWuiNnpFg.jpg',
+      alt: 'Sea of white clouds drifting through jagged green limestone peaks in Ha Giang',
+      title: 'When the Mountains Breathe: Morning Cloud Inversions in Ha Giang',
+      excerpt: 'Understanding Ha Giang’s microclimates, the best months for cloud hunting, and what to pack for crisp mountain mornings.'
     }
   ];
 
@@ -241,18 +250,19 @@ module.exports = function sections(data, helpers) {
 
   const story = () => `<section id="story" class="section wrap experience-section"><div class="story-surface motion-section"><div><div class="kicker">04 · Our story</div><h2>The road is better<br>with local perspective.</h2><p>Sky Ha Giang Loop brings your mountain journey into one clear plan: the route, your arrival from Hanoi and the local Easy Riders and guides who ride beside you in every weather. Choose a classic 3-day or 4-day loop or shape a private trip around your group.</p><div class="story-pillars"><span>Route planning</span><span>Local Easy Riders</span><span>Hanoi transfer</span><span>Private journeys</span></div><a class="pill story-cta" href="#contact">Plan with us ↗</a></div><div class="team-services"><h3>The people behind your journey</h3><p>Discuss your local guide or Easy Rider driver, language needs and travel arrangements before departure. Your booking confirmation identifies your tour contact and daily route plan.</p><figure class="story-single-feature"><img src="assets/up/2aOboR4nagcfVadJvbIbYVY5KVWCnYg5IJmLqdnM.jpg" alt="Local rider in green jacket and riding gloves smiling with arms open above a winding mountain pass" width="720" height="540" loading="lazy"><figcaption><strong>Experienced local Easy Riders</strong><span>Unhurried stops at safe mountain viewpoints along the loop.</span></figcaption></figure></div></div></section>`;
 
-  const gallery = () => `<section id="gallery" class="section wrap experience-section"><div class="surface"><header class="section-heading"><div><div class="kicker">05 · Gallery &amp; guest experiences</div><h2>Real stories from the Ha Giang Loop.</h2></div><p>Tap any guest experience article below to read the full story, or watch our unscripted road films from Du Gia, Nho Que, Ma Pi Leng and Lung Cu.</p></header><div class="experience-stats-bar" aria-label="Experience highlights"><span><strong>12</strong> Guest Experience Articles</span><span><strong>8</strong> Real Tour Videos</span><span><strong>8</strong> Route &amp; Highland Journals</span><span><strong>100%</strong> Authentic Loop Moments</span></div><div class="experience-block-head"><div><div class="kicker">Verified guest experience blog · Tap any card to read</div><h3>12 real traveller stories from the passes, rivers &amp; villages</h3></div><p>Each article focuses on one distinct moment from the loop with a single cover photograph. Click any card to open and read the full story.</p></div><div class="review-stories-grid">${guestBlogPosts.map(r => `<article class="review-blog-card" data-blog-post="${esc(r.id)}" tabindex="0" role="button" aria-label="Read full story: ${esc(r.title)}"><figure class="review-blog-cover"><img src="${r.src}" alt="${esc(r.alt)}" width="720" height="520" loading="lazy"><span class="review-blog-route">${esc(r.route)}</span></figure><div class="review-story-body"><div class="review-story-meta"><span class="review-badge">${esc(r.badge)}</span></div><h4>${esc(r.title)}</h4><p>${esc(r.excerpt)}</p><div class="review-story-footer"><strong>${esc(r.author)}</strong><span class="review-read-trigger">Read full story ↗</span></div></div></article>`).join('')}</div><div class="experience-block-head video-block-head"><div><div class="kicker">Real tour films · Unscripted moments</div><h3>Watch the passes, waterfalls &amp; homestay nights in motion</h3></div><p>From cliff jumping at Du Gia Waterfall and singing “Valerie” above the clouds to Easy Rider POV rides and drone flights over Tham Ma Pass.</p></div><div class="video-reels-grid">${tourVideos.map(v => `<article class="video-reel-card"><div class="video-reel-player"><video controls playsinline preload="metadata" src="${v.src}#t=0.5"></video></div><div class="video-reel-copy"><span class="video-reel-tag">${esc(v.tag)}</span><h4>${esc(v.title)}</h4><p>${esc(v.text)}</p></div></article>`).join('')}</div><div class="proof-status"><article>${icon('mountain')}<div><h3>8 real tour films</h3><p>Follow the passes, waterfalls, viewpoint singalongs and village roads that make the Ha Giang Loop unforgettable.</p></div></article><article>${icon('check')}<div><h3>20 clickable experience &amp; route articles</h3><p>Discover the people, places and personal moments that make every route different—click any card to read the full journal entry.</p></div></article></div></div><div id="discover" class="discover"><div class="head"><div><div class="kicker">Travel journal &amp; route articles</div><h2>Journeys &amp; Stories</h2></div></div><div class="discover-grid"><article><h3>Stories from the road</h3><p>Read first-hand experience articles matching our photos and videos from Du Gia, Nho Que, Ma Pi Leng, Lung Cu and Tham Ma.</p><a href="ha-giang-loop-3-days.html">Explore the loop</a></article></div></div></section>`;
+  // Single unified horizontal Blog section combining Guest Experiences, Tour Films and Route Journals
+  const gallery = () => `<section id="gallery" class="section wrap experience-section"><div id="discover" class="discover" data-blog-ready="true"><div class="travel-blog"><div class="travel-blog-head"><div><div class="kicker">05 · Blog — Journeys &amp; Guest Stories</div><h2 translate="no">Stories from the Ha Giang Loop</h2></div><div class="travel-blog-controls"><button class="travel-blog-arrow" type="button" aria-label="Previous stories">←</button><button class="travel-blog-arrow" type="button" aria-label="Next stories">→</button></div><p>Real guest experiences, road films and route guides from Du Gia, Nho Que, Ma Pi Leng and Lung Cu.</p></div><div class="travel-blog-rail" tabindex="0" aria-label="Ha Giang Loop blog articles, scroll horizontally">${unifiedBlogPosts.map(post => `<article class="travel-article-card" data-blog-post="${esc(post.id)}" tabindex="0" role="button" aria-label="Read article: ${esc(post.title)}"><div class="travel-article-media"><img src="${post.src}" alt="${esc(post.alt)}" width="720" height="520" loading="lazy"><span class="travel-article-badge">${esc(post.badge)}</span></div><div class="travel-article-copy"><span class="travel-article-meta">${esc(post.route)}</span><h3>${esc(post.title)}</h3><p>${esc(post.excerpt)}</p><span class="travel-article-read">Read full story ↗</span></div></article>`).join('')}</div></div></div></section>`;
 
-  const channels = () => data.contact.demo ? `<div class="contact-channels"><span><b>WhatsApp</b> ${esc(data.contact.phone)} <small>Demo · inactive</small></span><span><b>Email</b> ${esc(data.contact.email)} <small>Demo · inactive</small></span></div>` : `<div class="contact-channels"><a href="https://wa.me/${data.contact.phone.replace(/\D/g,'')}" target="_blank" rel="noopener">WhatsApp: ${esc(data.contact.phone)}</a><a href="mailto:${esc(data.contact.email)}">Email: ${esc(data.contact.email)}</a></div>`;
+  const channels = () => `<div class="contact-channels"><a href="https://wa.me/${data.contact.phone.replace(/\D/g,'')}" target="_blank" rel="noopener">WhatsApp: ${esc(data.contact.phone)}</a><a href="mailto:${esc(data.contact.email)}">Email: ${esc(data.contact.email)}</a></div>`;
 
-  const booking = bookingHtml => `<section id="contact" class="section wrap experience-section"><div class="surface booking-contact"><header class="section-heading"><div><div class="kicker">06 · Booking &amp; contact</div><h2>Book your next adventure.</h2></div><p>Choose your loop departure date and group size. If travelling from Hanoi, add your pickup needs.</p></header><div class="booking-layout"><div>${channels()}<ol class="deposit-flow"><li><span>01</span><div><strong>Request your trip</strong><p>Dates, travellers, route and Hanoi pickup.</p></div></li><li><span>02</span><div><strong>Confirm the quote</strong><p>Per-person price, included coach, other services and cancellation terms in writing.</p></div></li><li><span>03</span><div><strong>Agree the deposit</strong><p>Amount, due date and verified payment recipient confirmed before payment.</p></div></li></ol><p class="small-note">Deposit amount and payment method are not yet published. This site takes no payments.</p></div><form class="form" id="form"><p class="demo-contact-note contact-field-wide">${data.contact.demo?'Demo form · creates a draft only. No enquiry is sent and no booking is confirmed.':'Prepare an enquiry to send using your email app.'}</p><div class="contact-field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div><div class="contact-field"><label for="email">Email address</label><input id="email" name="email" autocomplete="email" type="email" required placeholder="Email address"></div><div class="contact-field contact-tour"><label for="package">Tour package</label><select id="package" name="package" required><option value="">Select your itinerary</option>${data.tours.map(t=>`<option value="${esc(t.value)}">${esc(t.value)}</option>`).join('')}</select></div><div class="contact-field contact-guests"><label for="guests">Travellers</label><input id="guests" name="guests" type="number" min="1" max="30" value="2" required></div><div class="date-row contact-field-wide"><div><label for="start">Loop departure date</label><input id="start" name="start" type="date" required></div><div><label for="end">Loop end date</label><input id="end" name="end" type="date" required></div></div><div class="contact-field contact-field-wide"><label for="pickup">Starting point</label><select id="pickup" name="pickup"><option>Hanoi pickup + coach to Ha Giang</option><option>Meet in Ha Giang City</option><option>Discuss another arrangement</option></select></div><div class="contact-field contact-field-wide"><label for="message">Trip notes</label><textarea id="message" name="message" rows="2" placeholder="Pickup location, arrival date, rooms or private-tour preferences"></textarea></div><button class="pill contact-field-wide" type="submit">Prepare booking enquiry ↗</button><div class="status contact-field-wide" id="status" role="status"></div></form></div><details class="booking-visual"><summary>See the booking journey</summary>${bookingHtml}</details></div></section>`;
+  const booking = bookingHtml => `<section id="contact" class="section wrap experience-section"><div class="surface booking-contact"><header class="section-heading"><div><div class="kicker">06 · Booking &amp; contact</div><h2>Book your next adventure.</h2></div><p>Choose your loop departure date and group size. If travelling from Hanoi, add your pickup needs.</p></header><div class="booking-layout"><div>${channels()}<ol class="deposit-flow"><li><span>01</span><div><strong>Request your trip</strong><p>Dates, travellers, route and Hanoi pickup.</p></div></li><li><span>02</span><div><strong>Confirm the quote</strong><p>Per-person price, included coach, other services and cancellation terms in writing.</p></div></li><li><span>03</span><div><strong>Agree the deposit</strong><p>Amount, due date and verified payment recipient confirmed before payment.</p></div></li></ol><p class="small-note">Your guide confirms the deposit amount, payment method and booking conditions before payment.</p></div><form class="form" id="form"><p class="contact-note contact-field-wide">Prepare your enquiry below. Review the details before sending them to our travel team.</p><div class="contact-field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div><div class="contact-field"><label for="email">Email address</label><input id="email" name="email" autocomplete="email" type="email" required placeholder="Email address"></div><div class="contact-field contact-tour"><label for="package">Tour package</label><select id="package" name="package" required><option value="">Select your itinerary</option>${data.tours.map(t=>`<option value="${esc(t.value)}">${esc(t.value)}</option>`).join('')}</select></div><div class="contact-field contact-guests"><label for="guests">Travellers</label><input id="guests" name="guests" type="number" min="1" max="30" value="2" required></div><div class="date-row contact-field-wide"><div><label for="start">Loop departure date</label><input id="start" name="start" type="date" required></div><div><label for="end">Loop end date</label><input id="end" name="end" type="date" required></div></div><div class="contact-field contact-field-wide"><label for="pickup">Starting point</label><select id="pickup" name="pickup"><option>Hanoi pickup + coach to Ha Giang</option><option>Meet in Ha Giang City</option><option>Discuss another arrangement</option></select></div><div class="contact-field contact-field-wide"><label for="message">Trip notes</label><textarea id="message" name="message" rows="2" placeholder="Pickup location, arrival date, rooms or private-tour preferences"></textarea></div><button class="pill contact-field-wide" type="submit">Prepare booking enquiry ↗</button><div class="status contact-field-wide" id="status" role="status"></div></form></div><details class="booking-visual"><summary>See the booking journey</summary>${bookingHtml}</details></div></section>`;
 
-  const home = bookingHtml => `<body class="experience-home"><a class="skip-link" href="#main-content">Skip to content</a><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html#home"><img src="assets/logo.jpg" width="42" height="42" alt="Sky Ha Giang Loop logo"> SKY TRAVEL</a><div class="links" id="navigation"><a href="index.html#home">Home</a><a href="packages.html">Tour Packages</a><a href="itinerary.html">Itinerary</a><a href="story.html">Our Story</a><a href="gallery.html">Gallery &amp; Reviews</a><a class="pill" href="contact.html">Booking &amp; Contact</a></div><button class="menu" id="menu" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button></div></nav><header id="home" class="hero"><div class="wrap heroContent"><div class="eyebrow">Ha Giang, Vietnam · Hanoi pickup available</div><h1>Ha Giang Loop.<br><em>Your way.</em></h1><p>River canyons. Mountain passes. Village stories.<br>Choose a 3-day, 4-day or private journey through the northern highlands.</p><div class="actions"><a class="pill" href="contact.html">Book Your Tour ↗</a><a class="pill ghost" href="packages.html">Explore the packages ↓</a></div><div class="hero-facts"><span>3 days · USD 200–226/person</span><span>4 days · USD 250–270/person</span><span>Private · Tailored quote</span></div></div></header><main id="main-content"><section class="section packages wrap compact-collection" id="packages" aria-labelledby="packages-title"><div class="head"><div><div class="kicker">02 · Tour packages</div><h2 id="packages-title">Find your Ha Giang Loop.</h2></div><p class="intro">Three ways to travel. Two classic loops and a private journey shaped around your group.</p></div><div class="package-grid">${data.tours.map(card).join('')}</div><div class="tour-compare-link"><a href="packages.html">Compare all packages ↗</a><span>Hanoi pickup available · Quote confirmed before booking</span></div><p class="package-price-note">${esc(data.priceNote)}</p></section>${itinerary()}${story()}${gallery()}${booking(bookingHtml)}<div class="section wrap experience-section">${faqs()}</div></main><footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><b>${esc(data.brand)}</b><p>Ha Giang Loop journeys · 3 days, 4 days and private tours. Hanoi pickup and coach arrangements available.</p></div><div><h3>Explore</h3>${data.tours.map(t=>`<a href="${t.id}.html">${esc(t.title)}</a>`).join('<br>')}</div><div><h3>Contact</h3><p>${esc(data.contact.phone)}<br>${esc(data.contact.email)}<br><small>${data.contact.demo?'Demo details · not active':''}</small></p></div><div><h3>Before you travel</h3><a href="itinerary.html">Stops &amp; service details</a><br><a href="contact.html">Booking &amp; deposit process</a><br><a href="index.html#faq-title">Frequently asked questions</a></div></div><div class="wrap footer-bottom">© 2026 ${esc(data.brand)} · Prices and services confirmed before booking.</div></footer><script src="app.js" defer></script><script src="tour-interactions.js" defer></script><script src="travel-blog.js" defer></script><script src="booking-journey.js" defer></script><script src="site-experience.js" defer></script></body></html>`;
+  const home = bookingHtml => `<body class="experience-home"><a class="skip-link" href="#main-content">Skip to content</a><nav class="nav"><div class="wrap navin"><a class="brand" href="index.html#home"><img src="assets/logo.jpg" width="42" height="42" alt="Sky Ha Giang Loop logo"> SKY TRAVEL</a><div class="links" id="navigation"><a href="index.html#home">Home</a><a href="packages.html">Tour Packages</a><a href="itinerary.html">Itinerary</a><a href="story.html">Our Story</a><a href="gallery.html">Gallery &amp; Reviews</a><a class="pill" href="contact.html">Booking &amp; Contact</a></div><button class="menu" id="menu" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button></div></nav><header id="home" class="hero"><div class="wrap heroContent"><div class="eyebrow">Ha Giang, Vietnam · Hanoi pickup available</div><h1>Ha Giang Loop.<br><em>Your way.</em></h1><p>River canyons. Mountain passes. Village stories.<br>Choose a 3-day, 4-day or private journey through the northern highlands.</p><div class="actions"><a class="pill" href="contact.html">Book Your Tour ↗</a><a class="pill ghost" href="packages.html">Explore the packages ↓</a></div><div class="hero-facts"><span>3 days · USD 200–226/person</span><span>4 days · USD 250–270/person</span><span>Private · Tailored quote</span></div></div></header><main id="main-content"><section class="section packages wrap compact-collection" id="packages" aria-labelledby="packages-title"><div class="head"><div><div class="kicker">02 · Tour packages</div><h2 id="packages-title">Find your Ha Giang Loop.</h2></div><p class="intro">Three ways to travel. Two classic loops and a private journey shaped around your group.</p></div><div class="package-grid">${data.tours.map(card).join('')}</div><div class="tour-compare-link"><a href="packages.html">Compare all packages ↗</a><span>Hanoi pickup available · Quote confirmed before booking</span></div><p class="package-price-note">${esc(data.priceNote)}</p></section>${itinerary()}${story()}${gallery()}${booking(bookingHtml)}<div class="section wrap experience-section">${faqs()}</div></main><footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><b>${esc(data.brand)}</b><p>Ha Giang Loop journeys · 3 days, 4 days and private tours. Hanoi pickup and coach arrangements available.</p></div><div><h3>Explore</h3>${data.tours.map(t=>`<a href="${t.id}.html">${esc(t.title)}</a>`).join('<br>')}</div><div><h3>Contact</h3><p>${esc(data.contact.phone)}<br>${esc(data.contact.email)}</p></div><div><h3>Before you travel</h3><a href="itinerary.html">Stops &amp; service details</a><br><a href="contact.html">Booking &amp; deposit process</a><br><a href="index.html#faq-title">Frequently asked questions</a></div></div><div class="wrap footer-bottom">© 2026 ${esc(data.brand)} · Prices and services confirmed before booking.</div></footer><script src="app.js" defer></script><script src="tour-interactions.js" defer></script><script src="travel-blog.js" defer></script><script src="booking-journey.js" defer></script><script src="site-experience.js" defer></script></body></html>`;
 
   const pageSections = {
     itinerary: () => `<section class="page-intro surface"><div class="kicker">03 · Itinerary</div><h1>Plan the road before you ride.</h1><p>Choose a clear pace through Ha Giang, then let your local guide adjust the order around weather, road conditions and your group's energy.</p></section>${itinerary()}`,
     story: () => `<section class="page-intro surface"><div class="kicker">04 · Our Story</div><h1>Travel with local perspective.</h1><p>Clear planning, practical advice and a route that leaves room for the people and places along the way.</p></section>${story().replace('href="#contact"','href="contact.html"')}`,
-    gallery: () => `<section class="page-intro surface"><div class="kicker">05 · Gallery &amp; Reviews</div><h1>See the landscapes. Hear the stories.</h1><p>Tap any guest experience card or route journal below to read the full story, or watch our unscripted tour videos from the Ha Giang Loop.</p></section>${gallery()}`,
+    gallery: () => `<section class="page-intro surface"><div class="kicker">05 · Gallery &amp; Reviews</div><h1>Stories from the Ha Giang Loop.</h1><p>Explore detailed guest stories, route insights and real road films from Du Gia, Nho Que, Ma Pi Leng and Lung Cu.</p></section>${gallery()}`,
     contact: bookingHtml => `<section class="page-intro surface"><div class="kicker">06 · Booking &amp; Contact</div><h1>Let’s plan your mountain journey.</h1><p>Send your dates, group size and priorities. A local guide can suggest a practical route and explain which services are included or charged separately.</p></section>${booking(bookingHtml)}`,
     packages: () => `<section class="page-intro surface"><div class="kicker">02 · Tour Packages</div><h1>Three ways to experience Ha Giang.</h1><p>Compare the classic loops or ask for a private plan. Optional services are itemised separately and your guide helps you choose what fits.</p></section><div class="package-page-grid">${data.tours.map(card).join('')}</div>`
   };
