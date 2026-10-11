@@ -77,7 +77,7 @@
 .route-page .pill{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;min-height:46px;border-radius:8px;background:#527b69;color:#fff;text-decoration:none;font-weight:700;line-height:1.4}
 .route-nav{display:flex;align-items:center;gap:22px;max-width:1160px;margin:14px auto;padding:12px 20px;border-radius:12px;background:#faf8f1;position:relative;z-index:2}
 .route-brand{display:flex;align-items:center;gap:12px;margin-right:auto;text-decoration:none;font-weight:700}
-.route-brand img{border-radius:8px}
+.route-brand img{width:auto;height:48px;object-fit:contain;border-radius:0}
 .route-links{display:flex;align-items:center;gap:14px;overflow-x:auto;scrollbar-width:none}
 .route-links::-webkit-scrollbar{display:none}
 .route-links a{font-size:.8rem;white-space:nowrap;text-decoration:none}

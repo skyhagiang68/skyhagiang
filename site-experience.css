@@ -9,7 +9,7 @@
 .experience-home .menu{display:none}
 .experience-home .links a{font-size:.78rem;color:#315644;white-space:nowrap}
 .experience-home .brand{color:#315644;font-size:.72rem;letter-spacing:.08em;flex-shrink:0}
-.experience-home .brand img{border-radius:8px}
+.experience-home .brand img,.route-brand img{width:auto;height:48px;object-fit:contain;border-radius:0;background:transparent}
 .experience-home .pill{border-radius:8px;background:#527b69;color:white;min-height:46px;align-items:center;justify-content:center;font-size:.9rem;line-height:1.4;padding:12px 18px}
 .experience-home .pill:hover{box-shadow:0 8px 22px #244f4022}
 .experience-home .hero{height:auto;min-height:490px;max-height:none;margin-top:12px;padding:70px 38px;border-radius:14px;overflow:hidden}
