@@ -38,7 +38,9 @@ const tourSelect = document.querySelector('#package');
 const selectedTour = () => window.SkyTours?.tours.find(t => t.value === tourSelect.value);
 const updateDates = () => {
   const tour = selectedTour();
-  if (!tour || !start.value) return;
+  if (!start.value) return;
+  end.min = start.value;
+  if (!tour || !Number.isInteger(tour.durationDays)) {validateDates();return;}
   const date = new Date(start.value + 'T12:00:00Z');
   date.setUTCDate(date.getUTCDate() + tour.durationDays - 1);
   end.value = date.toISOString().slice(0,10);
@@ -62,7 +64,7 @@ form.addEventListener('submit', e => {
   validateDates();
   if (!form.reportValidity()) return;
   const data = new FormData(e.currentTarget);
-  const body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPackage: ' + data.get('package') + '\nStart date: ' + data.get('start') + '\nEnd date: ' + data.get('end') + '\nTravellers: ' + data.get('guests') + '\n\n' + data.get('message');
+  const body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPackage: ' + data.get('package') + '\nPublished range: ' + (selectedTour()?.price || 'Tailored quote') + '\nLoop departure date: ' + data.get('start') + '\nLoop end date: ' + data.get('end') + '\nTravellers: ' + data.get('guests') + '\nStarting point: ' + data.get('pickup') + '\nPublished classic prices are per person and include Hanoi pickup and coach travel to Ha Giang. Confirm the final price, other services and deposit in writing.\n\n' + data.get('message');
   const status = document.querySelector('#status');
   if (window.SkyTours?.contact.demo) {
     const note = document.createElement('p');

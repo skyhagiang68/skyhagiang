@@ -1,0 +1,209 @@
+/* One consistent finishing layer for home and every tour page. */
+[hidden]{display:none!important}
+.experience-home{color:#244a3b;overflow-x:clip}
+.experience-home>nav,.experience-home>header,.experience-home>main,.experience-home>footer{width:min(1200px,calc(100% - 32px));margin-inline:auto}
+.experience-home .wrap{width:100%;max-width:none}
+.experience-home .nav{position:relative!important;margin-top:12px;padding:12px 20px;border-radius:12px;background:#faf8f1}
+.experience-home .navin{gap:20px}
+.experience-home .links{display:flex;gap:17px}
+.experience-home .menu{display:none}
+.experience-home .links a{font-size:.78rem;color:#315644;white-space:nowrap}
+.experience-home .brand{color:#315644;font-size:.72rem;letter-spacing:.08em;flex-shrink:0}
+.experience-home .brand img{border-radius:8px}
+.experience-home .pill{border-radius:8px;background:#527b69;color:white;min-height:46px;align-items:center;justify-content:center;font-size:.9rem;line-height:1.4;padding:12px 18px}
+.experience-home .pill:hover{box-shadow:0 8px 22px #244f4022}
+.experience-home .hero{height:auto;min-height:490px;max-height:none;margin-top:12px;padding:70px 38px;border-radius:14px;overflow:hidden}
+.experience-home .hero:after{background:linear-gradient(90deg,#112c2bdd,#153c3348)}
+.experience-home .heroContent{max-width:750px;padding:0;margin:0;position:relative}
+.experience-home .hero h1{font-size:clamp(3.3rem,6.2vw,5.3rem);line-height:1.02;letter-spacing:-.025em;margin:18px 0}
+.experience-home .hero p{font-size:1.05rem;line-height:1.65;max-width:540px;margin:0}
+.experience-home .eyebrow{color:#d9e8ce;font-size:.69rem;letter-spacing:.13em}
+.experience-home .actions{display:flex;gap:12px;margin-top:24px}
+.experience-home .ghost{background:#fff2;border:1px solid #ffffff87}
+.experience-home .hero .actions .pill{background:#527b69}
+.experience-home .hero .actions .ghost{background:#183a315c;border:1px solid #ffffff87}
+.hero-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;font-size:.76rem;color:#f4f1e6}
+.hero-facts span{padding:7px 10px;border:1px solid #ffffff40;border-radius:6px;background:#132a263b}
+.experience-home .section{padding:0;margin-top:24px;margin-bottom:0;width:100%}
+.experience-home .compact-collection{background:#faf8f1f5;padding:22px;border-radius:14px}
+.experience-home .compact-collection .head{padding:0;background:transparent;border:0;box-shadow:none;margin-bottom:10px;align-items:center}
+.experience-home .compact-collection .head h2{font-size:clamp(1.8rem,3.5vw,2.8rem)}
+.experience-home .compact-collection .package-grid{padding:14px 6px 20px;gap:20px;scroll-padding-inline:6px}
+.experience-home .compact-collection .package-card{flex-basis:calc((100% - 40px)/3)!important;transform:none;min-height:0}
+.experience-home .compact-collection .tour-card-image{height:220px}
+.experience-home .compact-collection .tour-card-body{padding:18px;gap:10px}
+.experience-home .compact-collection .tour-card-body h3{font-size:1.5rem;line-height:1.2}
+.experience-home .compact-collection .tour-card-body p{font-size:.92rem;min-height:4.4em}
+.experience-home .compact-collection .tour-card-body>strong{font-size:1.1rem}
+.experience-home .compact-collection .tour-card-body>small{font-size:.76rem;color:#496a51;font-weight:600}
+.experience-home #contact .form{grid-template-columns:repeat(4,minmax(0,1fr))}
+.experience-home #contact .contact-field{grid-column:span 2}
+.experience-home #contact .contact-tour{grid-column:span 3}
+.experience-home #contact .contact-guests{grid-column:span 1}
+.experience-home #contact .contact-field-wide{grid-column:1/-1}
+.experience-home .tour-compare-link{padding:0 6px;font-size:.85rem}
+.package-price-note,.small-note{font:400 .8rem/1.6 "DM Sans",Arial,sans-serif;color:#53695d;margin:14px 0 0}
+.experience-home .package-price-note{padding-inline:6px}
+.experience-home .surface{padding:26px;border-radius:14px}
+.section-heading{display:flex;gap:28px;align-items:center;justify-content:space-between;margin-bottom:20px}
+.section-heading h2{font-size:clamp(1.7rem,3.2vw,2.4rem);text-transform:none;letter-spacing:0;margin:9px 0 0;line-height:1.15}
+.section-heading>p{max-width:360px;margin:0;font-size:.94rem;line-height:1.6}
+.experience-home .kicker,.route-page .kicker{color:#3f6c55;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+.transfer-diagram{padding:20px;border:1px solid #cfdcd0;border-radius:12px;background:#edf2e7;margin:16px 0 22px;position:relative;overflow:hidden}
+.diagram-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.diagram-heading h3{font:700 1.35rem/1.25 "Playfair Display",Georgia,serif;margin:6px 0 0;color:#244a3b;text-transform:none;letter-spacing:0}
+.mini-label{border:1px solid #cfdbcf;font-size:.68rem;padding:6px 8px;border-radius:6px;white-space:nowrap}
+.transfer-stops{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative}
+.transfer-stops:before{content:"";position:absolute;left:16%;right:16%;top:20px;border-top:2px dashed #aac0ab}
+.transfer-stops li{position:relative;display:grid;justify-items:center;gap:6px;text-align:center;min-width:0}
+.transfer-stops svg{width:42px;height:42px;padding:9px;border-radius:12px;background:#fff;border:1px solid #c9dbcd;fill:none;stroke:#39644e;stroke-width:1.7;z-index:1;box-shadow:0 4px 12px #244a3b0a}
+.transfer-stops strong{font-size:.92rem;color:#244a3b}
+.transfer-stops span{font-size:.75rem;line-height:1.5}
+.motion-section.is-visible .transfer-stops li{animation:nodeArrival .65s both cubic-bezier(.16,1,.3,1)}
+.motion-section.is-visible .transfer-stops li:nth-child(2){animation-delay:.12s}
+.motion-section.is-visible .transfer-stops li:nth-child(3){animation-delay:.24s}
+@keyframes nodeArrival{from{opacity:.35;transform:translateY(9px)}to{opacity:1;transform:none}}
+.route-switch{display:flex;gap:8px;margin:18px 0 14px}
+.route-switch button{flex:1;padding:12px;border:1px solid #cad7cb;border-radius:8px;background:#fff;color:#39644e;font:700 .85rem "DM Sans",sans-serif;cursor:pointer;min-height:46px}
+.route-switch button[aria-pressed=true]{background:#315b47;border-color:#315b47;color:#fff}
+.itinerary-plan.is-entering{animation:planArrival .35s ease-out}
+@keyframes planArrival{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+.day-diagram{list-style:none;padding:0;margin:0;display:grid;gap:10px;position:relative}
+.day-diagram:before{content:"";position:absolute;left:32px;top:24px;bottom:24px;border-left:2px dashed #aac0ab}
+.day-diagram>li{position:relative;min-width:0}
+.day-node{border:1px solid #d6e1d2;background:#fff;border-radius:10px;overflow:hidden}
+.day-node summary{display:flex;align-items:center;gap:14px;padding:14px;list-style:none;cursor:pointer;min-height:70px}
+.day-node summary::-webkit-details-marker{display:none}
+.node-dot{display:grid;place-items:center;width:36px;height:36px;flex-shrink:0;background:#e8eee2;border:1px solid #c6d6c6;color:#466349;border-radius:10px;font-weight:700;position:relative}
+.day-node summary>span:nth-child(2){flex:1;min-width:0}
+.day-node summary b{font-size:.66rem;color:#7f6938;text-transform:uppercase;display:block;margin-bottom:4px;letter-spacing:.06em}
+.day-node summary strong{font:700 1.1rem/1.3 "Playfair Display",serif;color:#244a3b}
+.node-toggle{color:#5d7f66;font-size:1.4rem}
+.day-node[open] .node-toggle{transform:rotate(45deg)}
+.node-copy{padding:0 22px 18px 64px;font-size:.92rem;line-height:1.65}
+.node-copy p{margin:10px 0 0}
+.stop-chips{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;gap:6px}
+.stop-chips li{font-size:.74rem;color:#3d6750;background:#edf3e9;border:1px solid #d4e0d1;border-radius:6px;padding:5px 8px}
+.text-link{display:inline-flex;margin-top:16px;color:#315d46;font-weight:700;font-size:.88rem;text-underline-offset:3px}
+.service-disclosure{border-top:1px solid #d8e1d4;margin-top:20px;padding-top:16px}
+.service-disclosure>summary{display:flex;justify-content:space-between;gap:12px;color:#315a45;font-weight:700;cursor:pointer;min-height:32px;font-size:.92rem}
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.service-grid article{padding:16px;border-radius:8px;border:1px solid #d6e1d2;background:#fff}
+.service-grid h4{font-size:.95rem;margin:8px 0;color:#2c5943}
+.service-grid p{font-size:.85rem;margin:0;line-height:1.6}
+.service-number{color:#8c743e;font-size:.72rem;font-weight:700}
+.story-surface{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;background:#355a48;color:#f5f5e9;padding:30px;border-radius:14px}
+.story-surface .kicker{color:#d8ddb9}
+.story-surface h2{font-size:clamp(1.8rem,3.2vw,2.5rem);line-height:1.15;letter-spacing:0;text-transform:none;margin:12px 0 18px}
+.story-surface p{font-size:.94rem;line-height:1.7;color:#e3ecdf;margin:0 0 18px}
+.team-services{padding:24px;border:1px solid #a3b8a17a;background:#ffffff08;border-radius:10px;align-self:center}
+.team-services h3{font-size:1.3rem;line-height:1.3;color:#f6f0d9;text-transform:none;margin:0 0 12px}
+.story-pillars{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.story-pillars span{padding:8px;font-size:.75rem;border:1px solid #ffffff38;border-radius:6px}
+.landscape-preview{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.landscape-preview figure{margin:0;min-width:0}
+.landscape-preview img{width:100%;height:250px;display:block;object-fit:cover;border-radius:10px}
+.landscape-preview figcaption{font-size:.72rem;color:#607265;margin-top:7px;line-height:1.5}
+.proof-status{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.proof-status article{display:flex;align-items:flex-start;gap:12px;border-top:1px solid #d8e1d4;padding-top:14px}
+.proof-status svg{width:30px;height:30px;fill:none;stroke:#58755f;stroke-width:1.7;flex-shrink:0}
+.proof-status h3{font-size:1.1rem;margin:2px 0 8px}
+.proof-status p{font-size:.84rem;margin:0;line-height:1.6}
+.experience-home #discover{position:relative;padding:0;margin-top:18px}
+.experience-home #discover>.head{display:none}
+.experience-home .travel-blog{margin:0;border-radius:14px}
+.experience-home .travel-blog-head{padding:0 0 14px}
+.experience-home .travel-blog-head h2{font-size:1.7rem}
+.experience-home #discover .travel-blog{position:relative;margin:0;padding:22px;border-radius:14px;background:#faf8f1f5;border:0;box-shadow:none;backdrop-filter:none}
+.experience-home #discover .travel-blog-head{position:static;align-items:center;justify-content:space-between;gap:14px;margin:0 0 16px;padding:0}
+.experience-home #discover .travel-blog-head>div:first-child{display:block}
+.experience-home #discover .travel-blog-head>p{display:none}
+.experience-home #discover .travel-blog-arrow{width:44px;height:44px;border-radius:8px}
+.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
+.contact-channels{display:grid;gap:10px;border:1px solid #d3dfcf;border-radius:10px;padding:14px;background:#edf2e7;font-size:.85rem;color:#365b44}
+.contact-channels span,.contact-channels a{overflow-wrap:anywhere}
+.contact-channels b,.contact-channels small{display:block}
+.contact-channels small{font-size:.73rem;color:#6c745c;margin-top:3px}
+.deposit-flow{list-style:none;padding:0;margin:22px 0;display:grid;gap:16px}
+.deposit-flow li{display:flex;gap:12px;align-items:flex-start}
+.deposit-flow li>span{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:8px;background:#e3eadb;color:#7d6834;font-size:.74rem;font-weight:700}
+.deposit-flow strong{font-size:.92rem;color:#2b5340}
+.deposit-flow p{font-size:.85rem;margin:5px 0 0;line-height:1.55}
+.experience-home .form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;min-width:0}
+.experience-home .contact-field{display:grid;gap:7px;min-width:0}
+.experience-home .contact-field-wide{grid-column:1/-1}
+.experience-home .contact-tour{grid-column:1/-1}
+.experience-home .contact-guests{grid-column:1/-1}
+.experience-home .form label{font-size:.8rem;color:#3f5c4a;font-weight:600}
+.experience-home .form input,.experience-home .form select,.experience-home .form textarea{width:100%;min-width:0;font:400 16px "DM Sans",sans-serif;padding:11px 12px;border:1px solid #c6d5c4;border-radius:8px;background:#fff;color:#315340;min-height:46px}
+.experience-home .form textarea{height:auto;min-height:76px}
+.experience-home .date-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.experience-home .date-row>div{display:grid;gap:7px;min-width:0}
+.experience-home .demo-contact-note{margin:0;padding:9px 11px;font-size:.77rem!important}
+.booking-visual{border-top:1px solid #d7e0d1;padding-top:16px;margin-top:22px}
+.booking-visual>summary{font-weight:700;font-size:.88rem;color:#3f614a;cursor:pointer}
+.experience-home .booking-visual .booking{width:100%;padding:0;margin:16px 0 0}
+.experience-home .site-footer{border-radius:12px 12px 0 0;margin-top:24px;padding:24px}
+.experience-home .footer-grid{grid-template-columns:1.25fr 1fr 1fr 1fr;gap:24px}
+.experience-home .footer-bottom{padding-top:18px;margin-top:16px;border-top:1px solid #ffffff2b}
+.experience-home .route-faq{margin:0}
+.private-plan ol{padding-left:20px}
+.private-plan li{margin-bottom:20px}
+.private-plan h3{font-size:1.5rem}
+.route-page .comparison-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.route-page .compare-tour>div{padding:20px}
+.route-page .compare-tour h2{font-size:1.6rem;line-height:1.2}
+.route-page .transfer-diagram{padding:16px}
+.route-page .transfer-stops{gap:10px}
+.route-page .transfer-stops strong{font-size:.8rem}
+.route-page .transfer-stops span{font-size:.7rem}
+.experience-home :is(button,a,summary,input,select,textarea):focus-visible{outline:3px solid #b48334;outline-offset:3px}
+@media(max-width:1000px){.experience-home .links{gap:10px}.experience-home .links a{font-size:.7rem}.experience-home .nav{padding:10px 14px}.experience-home .brand{font-size:.62rem}}
+@media(max-width:800px){
+ .experience-home>nav,.experience-home>header,.experience-home>main,.experience-home>footer{width:calc(100% - 24px)}
+ .experience-home .nav{margin-top:8px;padding:8px 12px}
+ .experience-home .brand{font-size:.7rem}.experience-home .navin{min-height:44px}
+ .experience-home .links{display:none}.experience-home .links.is-open{display:flex;position:absolute;top:66px;left:0;right:0;width:100%;background:#faf8f1;padding:12px;border-radius:12px;gap:3px;z-index:20}
+ .experience-home .links.is-open a{color:#315644;font-size:.88rem;white-space:normal;min-height:44px;padding:11px 12px}
+ .experience-home .menu{color:#315644;display:block;width:44px;height:44px}
+ .experience-home .hero{min-height:415px;margin-top:10px;padding:36px 22px}
+ .experience-home .hero h1{font-size:clamp(2.55rem,10.5vw,3.5rem);margin:14px 0}
+ .experience-home .hero p{font-size:.94rem;line-height:1.6}
+ .experience-home .eyebrow{font-size:.61rem;line-height:1.6}
+ .experience-home .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+ .experience-home .actions .pill{min-height:46px;padding:10px 9px;font-size:.77rem}
+ .hero-facts{margin-top:18px;font-size:.66rem;gap:6px}.hero-facts span{padding:6px 8px}
+ .experience-home .section{margin-top:16px;padding:0}
+ .experience-home .surface,.experience-home .compact-collection{padding:16px}
+ .experience-home .compact-collection .head{padding:0;margin:0 0 8px}
+ .experience-home .compact-collection .head h2{font-size:1.6rem}
+ .experience-home .compact-collection .intro{font-size:.86rem;line-height:1.6;margin-top:12px;-webkit-line-clamp:unset}
+ .experience-home .compact-collection .package-grid{gap:14px;padding:12px 4px 18px;scroll-padding-inline:4px}
+ .experience-home .compact-collection .package-card{flex-basis:100%!important;border-radius:10px}
+ .experience-home .compact-collection .tour-card-image{height:clamp(170px,50vw,260px)}
+ .experience-home .compact-collection .tour-card-body{padding:15px;gap:9px}
+ .experience-home .compact-collection .tour-card-body h3{font-size:1.3rem}
+ .experience-home .compact-collection .tour-card-body p{font-size:.9rem;min-height:0;-webkit-line-clamp:3}
+ .experience-home .compact-collection .tour-arrows{inset:calc(12px + clamp(85px,25vw,130px)) -3px auto;transform:translateY(-50%)}
+ .experience-home .compact-collection .tour-arrow{width:44px;height:44px;background:#fffffff0;box-shadow:0 4px 16px #244a3b24;border-radius:8px}
+ .experience-home .tour-compare-link{padding:0 4px;font-size:.83rem}.experience-home .package-price-note{font-size:.75rem}
+ .section-heading{display:block;margin-bottom:16px}.section-heading h2{font-size:1.75rem;margin-top:8px}.section-heading>p{font-size:.88rem;margin-top:12px;max-width:none}
+ .transfer-diagram{padding:14px;margin:14px 0 18px}.diagram-heading{gap:8px}.diagram-heading h3{font-size:1.13rem}.mini-label{display:none}
+ .transfer-stops{gap:8px;margin-top:16px}.transfer-stops strong{font-size:.76rem;line-height:1.35}.transfer-stops span{font-size:.68rem;line-height:1.4}.transfer-stops svg{width:36px;height:36px;padding:7px;border-radius:9px}
+ .transfer-stops:before{top:17px}.small-note{font-size:.75rem;line-height:1.6}
+ .route-switch{gap:7px}.route-switch button{font-size:.76rem;padding:10px 6px}
+ .day-node summary{padding:11px;gap:10px;min-height:66px}.node-dot{width:31px;height:31px;font-size:.85rem}.day-node summary strong{font-size:.97rem;line-height:1.4}.node-copy{padding:0 14px 14px 52px;font-size:.85rem}.day-diagram:before{left:26px}
+ .stop-chips li{font-size:.7rem;padding:4px 6px}.service-grid{grid-template-columns:1fr}.service-grid article{padding:13px}.service-disclosure>summary{font-size:.85rem;line-height:1.5}
+ .story-surface{grid-template-columns:1fr;gap:20px;padding:22px 18px}.story-surface h2{font-size:1.8rem}.story-surface p{font-size:.88rem;line-height:1.65}.team-services{padding:16px}.team-services h3{font-size:1.16rem}
+ .landscape-preview{gap:10px}.landscape-preview img{height:150px;border-radius:8px}.landscape-preview figcaption{font-size:.65rem}
+ .proof-status{grid-template-columns:1fr;gap:14px}.proof-status h3{font-size:1.06rem}.proof-status p{font-size:.82rem}
+ .experience-home #discover .travel-blog{padding:16px}.experience-home #discover .travel-blog-head{gap:10px;align-items:center}.experience-home .travel-blog-head h2{font-size:1.45rem}.experience-home #discover .travel-blog-head .kicker{font-size:.56rem;letter-spacing:.08em}.experience-home .travel-article-copy{padding:16px}.experience-home .travel-article-copy p{font-size:.87rem}
+ .booking-layout{grid-template-columns:1fr;gap:22px}.contact-channels{grid-template-columns:1fr 1fr;padding:12px;gap:12px;font-size:.8rem}
+ .deposit-flow{gap:12px;margin:18px 0}.deposit-flow p{font-size:.8rem}.deposit-flow strong{font-size:.86rem}
+ .experience-home .form{gap:12px}.experience-home .form label{font-size:.77rem}.experience-home .form input,.experience-home .form select{font-size:16px;padding:10px;min-height:46px}
+ .experience-home .contact-tour{grid-column:1/-1}.experience-home .contact-guests{grid-column:1/-1}.experience-home .form textarea{min-height:76px}
+ .experience-home .site-footer{padding:20px 16px;margin-top:18px}.experience-home .footer-grid{grid-template-columns:1fr 1fr;gap:22px 14px}.experience-home .footer-brand{grid-column:1/-1}
+ .route-page .comparison-cards{grid-template-columns:1fr}.route-page .transfer-stops{gap:6px}.route-page .surface{padding:16px}
+}
+@media(max-width:350px){.experience-home .hero{padding:30px 16px;min-height:415px}.experience-home .hero h1{font-size:2.5rem}.experience-home .actions{grid-template-columns:1fr}.experience-home .surface,.experience-home .compact-collection{padding:13px}.node-copy{padding-left:14px}.contact-channels{grid-template-columns:1fr}.landscape-preview img{height:115px}}
+@media(prefers-reduced-motion:reduce){.motion-section.is-visible .transfer-stops li,.itinerary-plan.is-entering{animation:none!important}}

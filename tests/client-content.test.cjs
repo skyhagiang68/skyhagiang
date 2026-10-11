@@ -4,8 +4,15 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname,'..');
 const data = JSON.parse(fs.readFileSync(path.join(root,'tours.json'),'utf8'));
-assert.equal(data.tours.length,2);
-assert.deepEqual(data.tours.map(t=>[t.durationDays,t.nights]),[[3,2],[4,3]]);
+assert.equal(data.tours.length,3);
+const standard=data.tours.filter(t=>t.kind!=='private');
+assert.deepEqual(standard.map(t=>[t.durationDays,t.nights]),[[3,2],[4,3]]);
+assert.deepEqual(standard.map(t=>[t.priceMin,t.priceMax]),[[200,226],[250,270]]);
+assert.equal(data.priceBasis,'per person');
+assert.equal(data.transfer.includedInClassic,true);
+assert.equal(data.tours[2].kind,'private');
+assert.equal(data.tours[2].durationDays,null);
+assert.deepEqual(data.media,{photos:[],videos:[],reviews:[]});
 const sandbox={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'tour-data.js'),'utf8'),sandbox);
 assert.equal(JSON.stringify(sandbox.window.SkyTours),JSON.stringify(data));
@@ -17,13 +24,23 @@ for(const file of files){
   assert.equal((html.match(/rel="canonical"/g)||[]).length,1,`${file}: one canonical`);
   assert.equal((html.match(/<main[\s>]/g)||[]).length,1,`${file}: one main`);
   assert.ok(html.includes('name="description"'),`${file}: meta description`);
-  assert.ok(!/\$165|\$180|from \$390|Classic Loop|Private Escape|GÓI DEMO|per person/.test(html),`${file}: no demo products or invented prices`);
+  assert.ok(!/\$165|\$180|from \$390|Classic Loop|Private Escape|GÓI DEMO/.test(html),`${file}: no demo products or invented prices`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,`${file}: unique IDs`);
   for(const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
     const schema=JSON.parse(match[1]);
     assert.equal(schema['@context'],'https://schema.org');
-    assert.ok(!/aggregateRating|reviewCount|priceCurrency|"offers"/.test(match[1]),'no fabricated commercial schema');
+    assert.ok(!/aggregateRating|reviewCount|ratingValue/.test(match[1]),'no fabricated reviews or ratings');
+    for(const trip of schema['@graph']||[schema]) if(trip['@type']==='TouristTrip'){
+      const tour=data.tours.find(t=>t.id+'.html'===file);
+      if(tour?.kind==='private') assert.ok(!trip.offers,'private prices are not invented');
+      else if(tour){
+        assert.equal(trip.offers.priceSpecification.minPrice,tour.priceMin);
+        assert.equal(trip.offers.priceSpecification.maxPrice,tour.priceMax);
+        assert.equal(trip.offers.priceSpecification.priceCurrency,'USD');
+        assert.match(trip.offers.priceSpecification.description,/Per person, including Hanoi pickup and coach/);
+      }
+    }
   }
   for(const match of html.matchAll(/(?:href|src)="([^"?#]+)(?:\?[^"#]*)?(?:#[^"]*)?"/g)){
     const ref=match[1].replaceAll('&amp;','&');
@@ -33,16 +50,28 @@ for(const file of files){
   for(const match of html.matchAll(/href="#([^"#]+)"/g)) assert.ok(ids.includes(match[1]),`${file}: missing anchor ${match[1]}`);
 }
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
-assert.equal((home.match(/class="package-card"/g)||[]).length,2);
+assert.equal((home.match(/class="package-card"/g)||[]).length,3);
 assert.ok(home.indexOf('id="packages"')<home.indexOf('id="story"'));
+const sections=['home','packages','itinerary','story','gallery','contact'];
+sections.forEach(id=>assert.ok(home.includes(`id="${id}"`),`section ${id}`));
+assert.ok(sections.every((id,i)=>!i||home.indexOf(`id="${sections[i-1]}"`)<home.indexOf(`id="${id}"`)));
+assert.ok(home.includes('Book Your Tour'));
+assert.ok(home.includes('Hanoi pickup'));
+assert.ok(home.includes('Coach journey'));
+assert.ok(home.includes('USD 200–226')&&home.includes('USD 250–270'));
+assert.ok(home.includes('id="pickup"'));
+assert.ok(home.includes('Hanoi pickup and coach travel are included'));
+assert.ok(!home.includes('Coach tickets are quoted separately'));
+assert.ok(!home.includes('★★★★★'));
 if(data.contact.demo){
   assert.ok(!/84948242421|sky@traverl\.com/.test(home));
   assert.ok(home.includes('hello@example.com'));
   assert.ok(home.includes('Demo form'));
 }
-for(const t of data.tours){
+for(const t of standard){
   assert.equal(t.itinerary.length,t.durationDays);
-  assert.equal(t.price,'Request a quote');
+  assert.ok(t.price.startsWith('USD '));
+  assert.match(t.price,/\/ person$/);
   assert.deepEqual(t.itinerary.map(d=>d.day),Array.from({length:t.durationDays},(_,i)=>i+1));
   assert.ok(t.itinerary[0].stops.includes('Ha Giang'));
   assert.ok(t.itinerary.at(-1).stops.includes('Ha Giang'));
@@ -60,4 +89,4 @@ assert.ok(interactions.includes("event.pointerType!=='mouse'"),'touch remains na
 assert.ok(!interactions.includes('loopClone'),'no duplicated products');
 assert.ok(!interactions.includes('replaceChildren'),'static cards remain available without JS');
 assert.ok(fs.readFileSync(path.join(root,'client-tours.css'),'utf8').includes('prefers-reduced-motion'));
-process.stdout.write('Client content: 2 tours, 4 crawlable pages, metadata, schema, internal links, dates and motion safeguards PASS.\n');
+process.stdout.write('Client content: 3 packages, 5 crawlable pages, 6 sections, supplied prices, Hanoi transfer, metadata, links and motion safeguards PASS.\n');

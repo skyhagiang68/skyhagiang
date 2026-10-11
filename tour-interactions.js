@@ -36,7 +36,7 @@
       panel.style.setProperty('--from-x', `${rect.left + rect.width / 2 - innerWidth / 2}px`);
       panel.style.setProperty('--from-y', `${Math.max(0, Math.min(innerHeight, rect.top + rect.height / 2)) - innerHeight / 2}px`);
       panel.style.setProperty('--from-scale', String(Math.max(.6, Math.min(.94, rect.width / Math.min(1120, innerWidth - 32)))));
-      content.innerHTML = `<img class="tour-detail-image" src="assets/${item.image}" alt="${escape(item.imageAlt)}" width="800" height="533"><div class="tour-detail-copy"><span class="tag">${escape(item.days)}</span><p class="tour-detail-area">${escape(item.area)}</p><h2 id="tour-detail-title">${escape(item.title)}</h2><p class="tour-detail-intro">${escape(item.intro)}</p><p class="route-disclaimer">${escape(catalogue.routeNote)}</p><div class="tour-daily-plan">${item.itinerary.map((d,i)=>`<details class="itinerary-day" ${i===0?'open':''}><summary><span>Day ${d.day}</span><h3>${escape(d.title)}</h3><b aria-hidden="true">+</b></summary><div class="itinerary-day-copy"><p class="day-route">${escape(d.path)}</p><p>${escape(d.text)}</p><p class="day-stay">${escape(d.stay)}</p></div></details>`).join('')}</div><aside class="quote-note"><h3>Confirmed before you book</h3><p>${escape(catalogue.confirmation)}</p></aside><div class="tour-detail-footer"><strong>${escape(item.price)}</strong><button class="tour-book-button" type="button">Request this itinerary</button><a href="${item.id}.html">Full itinerary page ↗</a></div></div>`;
+      content.innerHTML = `<img class="tour-detail-image" src="assets/${item.image}" alt="${escape(item.imageAlt)}" width="800" height="533"><div class="tour-detail-copy"><span class="tag">${escape(item.days)}</span><p class="tour-detail-area">${escape(item.area)}</p><h2 id="tour-detail-title">${escape(item.title)}</h2><p class="tour-detail-intro">${escape(item.intro)}</p><p class="route-disclaimer">${escape(catalogue.routeNote)}</p><div class="tour-daily-plan">${item.kind==='private'?`<div class="private-plan"><h3>A journey made for your group</h3><p>${escape(item.fit)}</p><p>${escape(item.overnights)}</p><ul>${item.highlights.map(h=>`<li>${escape(h)}</li>`).join('')}</ul></div>`:item.itinerary.map((d,i)=>`<details class="itinerary-day" ${i===0?'open':''}><summary><span>Day ${d.day}</span><h3>${escape(d.title)}</h3><b aria-hidden="true">+</b></summary><div class="itinerary-day-copy"><p class="day-route">${escape(d.path)}</p><p>${escape(d.text)}</p><p class="day-stay">${escape(d.stay)}</p></div></details>`).join('')}</div><aside class="quote-note"><h3>Confirmed before you book</h3><p>${escape(catalogue.confirmation)}</p><p>${escape(catalogue.priceNote)}</p></aside><div class="tour-detail-footer"><strong>${escape(item.price)}</strong><button class="tour-book-button" type="button">Request this itinerary</button><a href="${item.id}.html">Full itinerary page ↗</a></div></div>`;
       panel.scrollTop = 0;
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
@@ -82,7 +82,7 @@
         if(event.target===card&&(event.key==='Enter'||event.key===' ')){event.preventDefault();openDetail(catalogue.tours[i],card,link);}
       });
       link.setAttribute('aria-haspopup','dialog');
-      link.setAttribute('aria-label',`View ${catalogue.tours[i].days} itinerary`);
+      link.setAttribute('aria-label',catalogue.tours[i].kind==='private'?'View private tour details':`View ${catalogue.tours[i].days} itinerary`);
       link.addEventListener('click',event => {
         if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey) return;
         event.preventDefault();openDetail(catalogue.tours[i],card,link);
@@ -120,6 +120,8 @@
     else window.addEventListener('resize',update,{passive:true});
     requestAnimationFrame(update);
     // Native touch scrolling on both axes. No touch preventDefault or capture.
+    // Prevent the browser's image/link ghost drag from cancelling mouse swipes.
+    grid.addEventListener('dragstart',event=>event.preventDefault());
     let drag=null, suppressClick=false;
     grid.addEventListener('pointerdown',event=>{
       if(event.pointerType!=='mouse'||event.button!==0||event.target.closest('a,button')||controls.hidden) return;
