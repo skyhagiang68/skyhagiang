@@ -227,7 +227,7 @@
     },
     {
       "q": "Is the Nho Que boat trip included?",
-      "a": "Not automatically. Boat availability, tickets, transfer arrangements and inclusion in the price must be confirmed in your written quote."
+      "a": "Not automatically. Boat tickets, local transfers and any other optional experience are charged separately unless they are listed in your written quote. Your guide will explain the practical options and help shape the day around your time, weather and comfort."
     },
     {
       "q": "Does the route cross the Chinese border?",
@@ -235,7 +235,7 @@
     },
     {
       "q": "Which weaving village and return-day waterfall will we visit?",
-      "a": "Lung Tam is the proposed weaving-village stop, subject to workshop access and route timing. The return-day waterfall location and feasibility must be confirmed with the team before booking."
+      "a": "Lung Tam is the proposed weaving-village stop, subject to workshop access and route timing. The return-day waterfall is chosen with your guide according to the road, weather and available time. Any added entrance, transfer or activity fee is explained before it is added."
     },
     {
       "q": "What are the prices and how do I get from Hanoi to Ha Giang?",
@@ -243,11 +243,23 @@
     },
     {
       "q": "How does the deposit work?",
-      "a": "First request your dates, group size and route. Confirm the written price, services and cancellation terms, then pay only the agreed deposit to a verified official recipient. The deposit amount and payment method have not yet been published. This demonstration website does not send enquiries, take deposits or confirm bookings."
+      "a": "First share your dates, group size and route. We then confirm the price, included services and any separately charged options in writing. Your guide can suggest a practical plan before you decide. Pay only the agreed deposit to a verified official recipient; the deposit amount and payment method are confirmed directly before payment. This demonstration website does not take deposits."
     },
     {
       "q": "Can weather change the itinerary?",
-      "a": "Yes. Road conditions, river access, waterfall conditions and viewpoint access can change the plan. Skywalk visits are conditional; do not enter closed trails or stop for photos on an active roadway."
+      "a": "Yes. Road conditions, river access, waterfall conditions and viewpoint access can change the plan. Your local guide will recommend safer alternatives and help adjust the order of stops. Skywalk visits are conditional; do not enter closed trails or stop for photos on an active roadway."
+    },
+    {
+      "q": "What services or activities may cost extra?",
+      "a": "Optional boat rides, extra entrance tickets, special room requests, private transfers, additional meals or activities outside the agreed route may be charged separately. We explain each item before adding it, and your guide can suggest the best-value choice for your group."
+    },
+    {
+      "q": "Can someone help us plan the right route?",
+      "a": "Yes. Tell us your dates, group size, pace and priorities. A local guide can suggest stops, timing and practical alternatives so the route fits your group instead of becoming a rushed checklist. For detailed advice, contact us by Gmail or WhatsApp."
+    },
+    {
+      "q": "How can I ask for more information?",
+      "a": "For a detailed quote or questions about pickup, optional services and the route, contact us by Gmail or WhatsApp. We will clarify what is included, what is optional and what should be confirmed before you book."
     }
   ],
   "sources": [

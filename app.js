@@ -3,14 +3,15 @@ const nav = document.querySelector('.nav');
 const menu = document.querySelector('#menu');
 const links = document.querySelector('#navigation');
 function closeMenu() {
+  if (!links || !menu) return;
   links.classList.remove('is-open');
   menu.setAttribute('aria-expanded', 'false');
 }
-menu.addEventListener('click', () => {
+menu?.addEventListener('click', () => {
   const open = links.classList.toggle('is-open');
   menu.setAttribute('aria-expanded', String(open));
 });
-links.addEventListener('click', closeMenu);
+links?.addEventListener('click', closeMenu);
 document.querySelectorAll('.choose-package').forEach(button => {
   button.addEventListener('click', () => {
     const select = document.querySelector('#package');
@@ -19,9 +20,9 @@ document.querySelectorAll('.choose-package').forEach(button => {
     setTimeout(() => document.querySelector('#start').focus(), 600);
   });
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
-document.addEventListener('click', e => { if (!nav.contains(e.target)) closeMenu(); });
-const updateNav = () => nav.classList.toggle('scrolled', scrollY > 40);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
+document.addEventListener('click', e => { if (nav && !nav.contains(e.target)) closeMenu(); });
+const updateNav = () => nav?.classList.toggle('scrolled', scrollY > 40);
 addEventListener('scroll', updateNav, { passive: true });
 updateNav();
 document.querySelectorAll('main img').forEach(img => { img.loading = 'lazy'; img.decoding = 'async'; });
@@ -32,6 +33,10 @@ document.querySelectorAll('img').forEach(img => {
   if (img.complete && !img.naturalWidth) fallback();
 });
 const form = document.querySelector('#form');
+if (!form) {
+  // Standalone pages share this script for consistent image handling, but only
+  // the booking page owns the interactive form.
+} else {
 const start = document.querySelector('#start');
 const end = document.querySelector('#end');
 const tourSelect = document.querySelector('#package');
@@ -90,3 +95,4 @@ form.addEventListener('submit', e => {
   link.textContent = 'Open email draft';
   status.replaceChildren('Your draft is ready. Send it from your email app: ', link);
 });
+}

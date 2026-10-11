@@ -78,7 +78,10 @@
 .route-nav{display:flex;align-items:center;gap:22px;max-width:1160px;margin:14px auto;padding:12px 20px;border-radius:12px;background:#faf8f1;position:relative;z-index:2}
 .route-brand{display:flex;align-items:center;gap:12px;margin-right:auto;text-decoration:none;font-weight:700}
 .route-brand img{border-radius:8px}
-.route-nav>a{font-size:.88rem}
+.route-links{display:flex;align-items:center;gap:14px;overflow-x:auto;scrollbar-width:none}
+.route-links::-webkit-scrollbar{display:none}
+.route-links a{font-size:.8rem;white-space:nowrap;text-decoration:none}
+.route-links .pill{font-size:.78rem}
 .route-shell{max-width:1160px;margin:26px auto 40px;position:relative;z-index:2}
 .route-breadcrumb{color:#f6f5ed;font-size:.85rem;margin:0 4px 18px}
 .route-breadcrumb a{color:#fff}
@@ -112,6 +115,18 @@
 .route-comparison caption{text-align:left;padding-bottom:12px;color:#52685c}
 .route-comparison th,.route-comparison td{text-align:left;padding:14px;border:1px solid #dae3d6;vertical-align:top}
 .route-comparison thead{background:#e6ecdf}
+.faq-lead{margin:0 0 4px;max-width:72ch}
+.faq-contact{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:22px;padding:16px;border:1px solid #cbd9ca;border-radius:12px;background:#edf2e7}
+.faq-contact>div:first-child{display:grid;gap:4px}
+.faq-contact strong{color:var(--route-ink)}
+.faq-contact span,.faq-contact small{color:var(--route-muted);font-size:.82rem;line-height:1.5}
+.faq-contact small{display:block;margin-top:10px;grid-column:1/-1}
+.faq-contact-actions{display:flex;gap:8px;flex-shrink:0}
+.faq-contact-button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 12px;border-radius:8px;color:#fff!important;text-decoration:none;font-weight:700;font-size:.78rem;white-space:nowrap}
+.faq-email{background:#527b69}.faq-whatsapp{background:#20a866}
+.page-intro{margin-bottom:22px}.page-intro h1{margin:10px 0 12px;font-size:clamp(2rem,5vw,3.7rem);line-height:1.05}.page-intro p{max-width:70ch;margin:0;font-size:1rem;line-height:1.7}
+.package-page-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:24px}.package-page-grid .package-card{display:flex;flex-direction:column;overflow:hidden}.package-page-grid .tour-card-image{width:100%;height:220px;object-fit:cover}.package-page-grid .tour-card-body{display:flex;flex:1;flex-direction:column;gap:10px;padding:20px}.package-page-grid .tour-card-body p{min-height:3.8em}.package-page-grid .tour-detail-trigger{margin-top:auto}
+.standalone-page .experience-section{margin:0 0 22px}.standalone-page .story-surface{margin-bottom:22px}.standalone-page #gallery{margin-top:0}.standalone-page #contact{margin-top:0}
 @media(hover:hover) and (min-width:801px){.compact-collection .package-card:hover{transform:translateY(-5px)!important}.compact-collection .package-card:hover .tour-card-image{transform:none}}
 @media(max-width:800px){
   .tour-enquiry-in-view .contact-float{visibility:hidden;pointer-events:none}
@@ -141,10 +156,11 @@
   .route-map strong{font-size:1.05rem}
   .route-map span{font-size:.78rem}
   .route-shell,.route-nav{width:calc(100% - 24px);margin-inline:auto}
-  .route-nav{padding:10px 12px;gap:10px}
-  .route-brand{font-size:.75rem;gap:8px;max-width:60%}
-  .route-nav>a:nth-child(2){display:none}
-  .route-nav .pill{font-size:.75rem;padding:10px}
+  .route-nav{padding:10px 12px;gap:10px;display:block}
+  .route-brand{font-size:.75rem;gap:8px;max-width:none;margin-bottom:8px}
+  .route-links{gap:8px;padding-bottom:2px}
+  .route-links a{font-size:.68rem}
+  .route-links .pill{font-size:.68rem;padding:9px 10px}
   .route-shell{margin-top:18px}
   .route-hero,.route-layout,.comparison-cards{grid-template-columns:1fr;gap:14px}
   .route-hero h1,.comparison-heading h1{font-size:2rem;line-height:1.1}
@@ -161,5 +177,6 @@
   .compare-tour img{height:190px}
   .compare-tour>div{padding:18px}
   .quote-note{padding:12px}
+  .faq-contact{display:grid;gap:12px;padding:13px}.faq-contact-actions{width:100%}.faq-contact-button{flex:1}.package-page-grid{grid-template-columns:1fr;gap:14px}.package-page-grid .tour-card-image{height:190px}.package-page-grid .tour-card-body{padding:16px}.page-intro{padding:18px}.page-intro h1{font-size:2rem}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.package-grid{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}

@@ -16,7 +16,7 @@ assert.deepEqual(data.media,{photos:[],videos:[],reviews:[]});
 const sandbox={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'tour-data.js'),'utf8'),sandbox);
 assert.equal(JSON.stringify(sandbox.window.SkyTours),JSON.stringify(data));
-const files=['index.html','packages.html',...data.tours.map(t=>t.id+'.html')];
+const files=['index.html','packages.html','itinerary.html','story.html','gallery.html','contact.html',...data.tours.map(t=>t.id+'.html')];
 for(const file of files){
   const html=fs.readFileSync(path.join(root,file),'utf8');
   assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`${file}: one H1`);
@@ -25,6 +25,7 @@ for(const file of files){
   assert.equal((html.match(/<main[\s>]/g)||[]).length,1,`${file}: one main`);
   assert.ok(html.includes('name="description"'),`${file}: meta description`);
   assert.ok(!/\$165|\$180|from \$390|Classic Loop|Private Escape|GÓI DEMO/.test(html),`${file}: no demo products or invented prices`);
+  if(['index.html','itinerary.html','story.html','gallery.html','contact.html'].includes(file)) assert.ok(html.includes('Tour Packages')&&html.includes('Itinerary')&&html.includes('Our Story')&&html.includes('Gallery &amp; Reviews')&&html.includes('Booking &amp; Contact'),`${file}: full child-page navigation`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,`${file}: unique IDs`);
   for(const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
@@ -61,8 +62,10 @@ assert.ok(home.includes('Coach journey'));
 assert.ok(home.includes('USD 200–226')&&home.includes('USD 250–270'));
 assert.ok(home.includes('id="pickup"'));
 assert.ok(home.includes('Hanoi pickup and coach travel are included'));
+assert.ok(home.includes('faq-contact-button')&&home.includes('Optional services'));
 assert.ok(!home.includes('Coach tickets are quoted separately'));
 assert.ok(!home.includes('★★★★★'));
+for(const page of ['itinerary.html','story.html','gallery.html','contact.html']) assert.ok(fs.existsSync(path.join(root,page)),`${page}: generated child page`);
 if(data.contact.demo){
   assert.ok(!/84948242421|sky@traverl\.com/.test(home));
   assert.ok(home.includes('hello@example.com'));
@@ -93,4 +96,4 @@ assert.ok(fs.readFileSync(path.join(root,'client-tours.css'),'utf8').includes('p
 const experienceCss=fs.readFileSync(path.join(root,'site-experience.css'),'utf8');
 assert.match(experienceCss,/\.experience-home #discover \.travel-blog-head\{position:static/,'blog controls stay inside the blog');
 assert.match(experienceCss,/main section\[id\]\{scroll-margin-top:16px/,'anchor offsets match the non-fixed header');
-process.stdout.write('Client content: 3 packages, 5 crawlable pages, 6 sections, supplied prices, Hanoi transfer, metadata, links and motion safeguards PASS.\n');
+process.stdout.write('Client content: 3 packages, 9 crawlable pages, 6 sections, supplied prices, Hanoi transfer, metadata, links and motion safeguards PASS.\n');
