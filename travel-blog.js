@@ -235,7 +235,7 @@
       badge: 'Drone Video + Route Story',
       image: 'assets/up/2aOboR4neBu8HaTpqQFxSQacLpplPICjzN5dvvJw.jpg',
       alt: 'Aerial view of the iconic S-bends of Tham Ma Pass with red-flag-topped cars winding up the curves',
-      intro: 'Viewed from above, the stacked switchbacks of Doc Tham Ma look like a silk ribbon dropped between emerald canyon walls.',
+      intro: 'We bring our guests to a safe overlook where the stacked switchbacks of Tham Ma look like a silk ribbon between emerald canyon walls.',
       body: [
         'Historically, local people tested the endurance of pack horses on the steep switchbacks of Tham Ma Pass; any horse that reached the top still breathing steadily was strong enough for the plateau. Today, those same S-curves are one of the most iconic stretches of road in northern Vietnam.',
         'Whether you travel by motorbike or in a support car flying the red Vietnamese flag, the climb up Tham Ma is smooth and exhilarating. At the summit viewpoint, everyone gathers to look straight back down the chain of hairpins snaking across the valley floor.',
@@ -254,7 +254,7 @@
       badge: 'Frontier Village Journal',
       image: 'assets/up/2aOboR4neBu8HaTpqQFxSQUhmM1WhDzKZYnFlLM0.jpg',
       alt: 'Golden sunset aerial over Lo Lo Chai ancient clay-roofed village with Lung Cu Flag Tower on the mountain peak behind',
-      intro: 'As late-afternoon sunlight turns gold across the northern frontier, the rammed-earth walls and yin-yang tiled roofs of Lo Lo Chai glow beneath Lung Cu peak.',
+      intro: 'We like to arrive at Lo Lo Chai as the late-afternoon light turns the earthen walls and tiled roofs gold beneath Lung Cu peak.',
       body: [
         'Sitting directly at the foot of Dragon Mountain, Lo Lo Chai is home to the Lo Lo and Hmong communities who have preserved their earthen-walled architecture for generations. Stone fences line quiet lanes where corn hangs to dry under dark clay eaves.',
         'From the air at golden hour, you can see how closely the village is connected to the frontier landscape—with traditional homes clustered in the green basin and Lung Cu Flag Tower rising on the summit just behind.',
@@ -274,7 +274,7 @@
       badge: 'Canyon Overlook Story',
       image: 'assets/up/2aOboR4neDghMxu6HZKIGGloYcaN67F2RB6vStjE.jpg',
       alt: 'Traveller sitting on a rocky outcrop overlooking the Nho Que River canyon',
-      intro: 'Away from the engines and highway traffic, sitting quietly on a limestone outcrop above the Nho Que gorge lets the scale of the plateau sink in.',
+      intro: 'We slow the group down on a safe limestone viewpoint above the Nho Que gorge so the scale of the plateau can really sink in.',
       body: [
         'Ma Pi Leng is famous for dramatic cliffside photography, but our guests often tell us their favorite memory was simply sitting still for ten minutes watching the shadows of clouds move across the opposite canyon wall.',
         'Because you travel with a dedicated local driver who knows the quiet pull-offs and safe rock ledges away from active road bends, you never have to rush a viewpoint.',
@@ -289,7 +289,7 @@
       badge: 'Easy Rider Story + Video',
       image: 'assets/up/2aOboR4nagcfVadJvbIbYVY5KVWCnYg5IJmLqdnM.jpg',
       alt: 'Local rider in green jacket and riding gloves smiling with arms open above a winding mountain pass',
-      intro: 'Born and raised on the mountain passes, our Easy Riders know every blind curve, weather shift and hidden valley viewpoint along the loop.',
+      intro: 'We work with Easy Riders who grew up on these mountain passes and know the blind curves, weather shifts and quiet viewpoints along the loop.',
       body: [
         'Mountain roads in northern Vietnam demand total focus—steep gradients, sudden fog banks, gravel patches and local farm traffic around tight hairpins. Riding with a local Easy Rider transforms that challenge into pure enjoyment.',
         'With gloves on and years of highland riding experience, your driver handles the gears, brakes and road conditions while sharing stories about the villages you pass through.',
@@ -308,7 +308,7 @@
       badge: 'Route Architecture & Views',
       image: 'assets/up/2aOboR4nakAGoIl4AnLpF34z0jbbKV8hL43WJeFs.jpg',
       alt: 'Traveller standing at a stone battlement viewpoint overlooking the turquoise Nho Que River and terraced slopes',
-      intro: 'Built from cut highland stone along the edge of the gorge, the battlement viewpoint offers one of the safest, clearest panoramas over the Nho Que valley.',
+      intro: 'We choose the stone battlement viewpoint when guests want a clear Nho Que panorama from a secure terrace beside the gorge.',
       body: [
         'For travellers who want spectacular canyon photographs without stepping onto exposed rock ledges, the stone-walled viewpoints along the Ma Pi Leng corridor offer wide, secure terraces with unobstructed sightlines.',
         'From the stone battlement, you can see both sides of the highland story at once: patchwork agricultural terraces clinging to the steep mountainside and the jade-green Nho Que River curving deep in the valley floor.',
@@ -328,7 +328,7 @@
       badge: 'Day 1 Valley Journal',
       image: 'assets/up/2aOboR4napgsKqnFPxXwKHEkq3Mxu2DZXobddT84.jpg',
       alt: 'Traveller in black hoodie spreading arms wide above sunny green mountain valleys in Ha Giang',
-      intro: 'Climbing out of Ha Giang City over Bac Sum Pass, the horizon opens into endless green valleys, cornfields and limestone cones.',
+      intro: 'We start with our guests in Ha Giang City and climb over Bac Sum Pass into the green valleys, cornfields and limestone cones of Quan Ba.',
       body: [
         'Day 1 of the loop is all about transition—leaving the lowland river town behind and climbing through Heaven’s Gate into the cool air of the Quan Ba plateau. Below the viewpoints, emerald rice paddies surround the twin limestone hills of Nui Doi.',
         'Continuing toward Du Gia through the Duong Thuong valley, the road winds between quiet farming hamlets where green slopes rise on both sides. Stopping at a sunny ridge overlook to spread your arms wide in the mountain breeze sets the tone for the entire trip.',
@@ -348,7 +348,7 @@
       badge: 'Group Ride Journal',
       image: 'assets/up/2aOboR4naJn32rlt5jc4lGazTkIiyhOu4HcKKpns.jpg',
       alt: 'Back view of traveller looking up at Lung Cu Flag Tower with a row of tour motorbikes parked at the base',
-      intro: 'Travelling in a coordinated small-group convoy means you get the freedom of the open mountain road with the backup of a full local crew.',
+      intro: 'We keep our small-group convoys together so guests enjoy the open mountain road with the support of a full local crew.',
       body: [
         'When our bikes pull up in a neat row at the base of Lung Cu Flag Tower or a mountain pass rest stop, you feel the camaraderie that makes the Ha Giang Loop famous among international travellers.',
         'Our lead guide sets a steady, comfortable pace at the front while a sweep rider brings up the rear, making sure nobody is ever left behind or pressured to ride faster than they want.',
@@ -363,7 +363,7 @@
       badge: 'Highland Atmosphere Guide',
       image: 'assets/up/2aOboR4nYFnvIC8LFnKf6cvpEiMUYqkNWuiNnpFg.jpg',
       alt: 'Sea of white clouds drifting through jagged green limestone peaks in Ha Giang',
-      intro: 'Watching ribbons of white cloud weave silently between dark-green karst peaks is one of the most unforgettable sights in northern Vietnam.',
+      intro: 'We watch the weather with our guests and look for the moments when white cloud drifts between Ha Giang’s dark-green karst peaks.',
       body: [
         'Because Ha Giang’s limestone peaks rise sharply from deep river valleys, moisture from the rivers and forests condenses overnight into soft layers of valley fog. As the morning sun warms the ridges, those clouds lift and drift between the summits.',
         'No two mornings on the loop ever look the same—a pass that is sunlit and crystal-clear one day may be wrapped in cinematic white mist the next.',
@@ -410,7 +410,7 @@
       const firstPart = paragraphs.slice(0, 2).map(p => `<p>${p}</p>`).join('');
       const restPart = paragraphs.slice(2).map(p => `<p>${p}</p>`).join('');
 
-      modal.querySelector('.blog-modal-content').innerHTML = `<img src="${story.image}" alt="${story.alt}"><div class="blog-modal-copy"><div class="travel-article-meta">${story.place} · ${story.badge || 'Experience Blog'}</div><h2 id="blog-title">${story.title}</h2><p><strong>${story.intro}</strong></p>${firstPart}${midMediaHtml}${restPart}${ctaHtml}</div>`;
+      modal.querySelector('.blog-modal-content').innerHTML = `<img src="${story.image}" alt="${story.alt}"><div class="blog-modal-copy"><div class="travel-article-meta">${story.place} · Our travel story</div><h2 id="blog-title">${story.title}</h2><p><strong>${story.intro}</strong></p>${firstPart}${midMediaHtml}${restPart}${ctaHtml}</div>`;
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('blog-modal-open');
@@ -456,11 +456,11 @@
     section.dataset.blogReady = 'true';
     const head = section.querySelector('.head');
     if (head) {
-      head.innerHTML = '<div><div class="kicker">Route &amp; highland journal</div><h2 translate="no">Journeys &amp; Stories</h2></div><p class="intro">Tap any article below to read in-depth stories on Ha Giang’s mountain passes, frontier villages and highland weather.</p>';
+      head.innerHTML = '<div><div class="kicker">Our team &amp; our guests</div><h2 translate="no">Journeys &amp; Stories</h2></div><p class="intro">Short stories from our team about the routes, places and guests we guide through Ha Giang.</p>';
     }
     const wrapper = document.createElement('div');
     wrapper.className = 'travel-blog';
-    wrapper.innerHTML = '<div class="travel-blog-head"><div><div class="kicker">8 standalone route articles · Click to read</div><h2 translate="no">Blog — Journeys</h2></div><div class="travel-blog-controls"><button class="travel-blog-arrow" type="button" aria-label="Previous stories">←</button><button class="travel-blog-arrow" type="button" aria-label="Next stories">→</button></div><p>Field notes and route guides from Tham Ma Pass, Lo Lo Chai, Ma Pi Leng and Quan Ba.</p></div><div class="travel-blog-rail" tabindex="0" aria-label="Travel experience stories, scroll horizontally"></div>';
+    wrapper.innerHTML = '<div class="travel-blog-head"><div><div class="kicker">Our team · our guests</div><h2 translate="no">Blog — Journeys</h2></div><div class="travel-blog-controls"><button class="travel-blog-arrow" type="button" aria-label="Previous stories">←</button><button class="travel-blog-arrow" type="button" aria-label="Next stories">→</button></div><p>Short route stories told from our side of the journey.</p></div><div class="travel-blog-rail" tabindex="0" aria-label="Travel experience stories, scroll horizontally"></div>';
     const rail = wrapper.querySelector('.travel-blog-rail');
 
     stories.forEach(story => {
@@ -469,7 +469,7 @@
       card.tabIndex = 0;
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `Read article: ${story.title}`);
-      card.innerHTML = `<div class="travel-article-media"><img src="${story.image}" alt="${story.alt}" loading="lazy"><span class="travel-article-badge">${story.badge}</span></div><div class="travel-article-copy"><span class="travel-article-meta">${story.place}</span><h3>${story.title}</h3><p>${story.intro}</p><span class="travel-article-read">Read full story ↗</span></div>`;
+      card.innerHTML = `<div class="travel-article-media"><img src="${story.image}" alt="${story.alt}" loading="lazy"><span class="travel-article-badge">Our team &amp; guests</span></div><div class="travel-article-copy"><span class="travel-article-meta">${story.place}</span><h3>${story.title}</h3><p>${story.intro}</p><span class="travel-article-read">Read full story ↗</span></div>`;
       card.addEventListener('click', () => openArticle(story, card));
       card.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
