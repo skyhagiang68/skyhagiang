@@ -26,15 +26,13 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import os
+          import re
 
-          page = Path("index.html")
-          source = page.read_text(encoding="utf-8")
           sha = os.environ["PAGE_SHA"]
           head = (
               f'<link rel="stylesheet" href="tour-carousel.css?v={sha}">'
               f'<link rel="stylesheet" href="mobile-layout.css?v={sha}">'
               f'<link rel="stylesheet" href="travel-blog.css?v={sha}">'
-              f'<link rel="stylesheet" href="nho-que-background.css?v={sha}">'
               f'<link rel="stylesheet" href="booking-journey.css?v={sha}">'
               "</head>"
           )
@@ -42,15 +40,19 @@ jobs:
               f'<script src="tour-interactions.js?v={sha}"></script>'
               f'<script src="travel-blog.js?v={sha}"></script>'
               f'<script src="booking-journey.js?v={sha}"></script>'
-              f'<script src="nature-background-v7.js?v={sha}"></script>'
-              "<script>const bg = new NatureBackground({logoText: 'SKY TRAVEL', "
-              "showLogo: false, scrollSensitivity: 1.0, "
-              "maxPixelRatio: window.innerWidth < 800 ? 1 : 1.35, zIndex: 1});</script></body>"
+              "</body>"
           )
-          page.write_text(
-              source.replace("</head>", head).replace("</body>", scripts),
-              encoding="utf-8",
-          )
+          assets = "landscape.css|natural-theme.css|natural-sales-layout.css|mobile-polish.css|nho-que-background.css|nature-background-v7.js|background-init.js|app.js"
+          for name in ("index.html", "packages.html"):
+              page = Path(name)
+              source = page.read_text(encoding="utf-8")
+              source = re.sub(
+                  rf'(href|src)="({assets})(?:\?[^\"]*)?"',
+                  lambda match: f'{match[1]}="{match[2]}?v={sha}"', source,
+              )
+              if name == "index.html":
+                  source = source.replace("</head>", head).replace("</body>", scripts)
+              page.write_text(source, encoding="utf-8")
           PY
       - uses: actions/upload-pages-artifact@v3
         with:

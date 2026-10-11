@@ -281,10 +281,12 @@
       this.targetMouse = { x: 0, y: 0 };
       this.currentMouse = { x: 0, y: 0 };
       this.isDestroyed = false;
+      this.panoramaReady = false;
 
       this._initDOM();
       this._initWebGL();
       this._initLiveWorldOverlay();
+      this._loadPanorama();
       this._bindEvents();
       this._animate = this._animate.bind(this);
       requestAnimationFrame(this._animate);
@@ -293,6 +295,7 @@
     _initDOM() {
       this.wrapper = document.createElement('div');
       this.wrapper.className = 'skyhagiang-bg-wrapper';
+      this.wrapper.dataset.state = 'loading';
       Object.assign(this.wrapper.style, {
         position: 'fixed',
         top: '0',
@@ -339,7 +342,11 @@
         this.glCanvas.getContext('webgl', { alpha: false, antialias: true }) ||
         this.glCanvas.getContext('experimental-webgl');
       this.gl = gl;
-      if (!gl) return;
+      if (!gl) {
+        this.fallbackCtx = this.glCanvas.getContext('2d');
+        this._resize();
+        return;
+      }
 
       const compile = (type, src) => {
         const s = gl.createShader(type);
@@ -398,19 +405,41 @@
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
+      this.texture = tex;
+      gl.uniform1i(this.uniforms.panorama, 0);
+      this._resize();
+    }
+
+    _loadPanorama() {
       const img = new Image();
+      this.panoramaImage = img;
       img.crossOrigin = 'anonymous';
       img.onload = () => {
         if (this.isDestroyed) return;
-        gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, tex);
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        if (this.gl) {
+          const gl = this.gl;
+          gl.activeTexture(gl.TEXTURE0);
+          gl.bindTexture(gl.TEXTURE_2D, this.texture);
+          gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        }
+        this.panoramaReady = true;
+      };
+      img.onerror = () => {
+        this.wrapper.dataset.state = 'error';
+        console.error('Could not decode the current panorama background.');
       };
       img.src = MASTER_PANORAMA_B64;
+    }
 
-      gl.uniform1i(this.uniforms.panorama, 0);
-      this._resize();
+    _renderFallbackPanorama() {
+      const image = this.panoramaImage;
+      const sw = image.naturalWidth * 0.94;
+      const sh = image.naturalHeight * 0.25;
+      const sx = image.naturalWidth * (0.03 + this.currentMouse.x * 0.022);
+      const sy = Math.max(0, Math.min(image.naturalHeight - sh,
+        image.naturalHeight * (this.currentScroll * 0.75 - this.currentMouse.y * 0.006)));
+      this.fallbackCtx.drawImage(image, sx, sy, sw, sh, 0, 0, this.glCanvas.width, this.glCanvas.height);
     }
 
     _initLiveWorldOverlay() {
@@ -721,7 +750,7 @@
       this.currentMouse.x += (this.targetMouse.x - this.currentMouse.x) * 0.06;
       this.currentMouse.y += (this.targetMouse.y - this.currentMouse.y) * 0.06;
 
-      if (this.gl && this.program) {
+      if (this.panoramaReady && this.gl && this.program) {
         const gl = this.gl;
         gl.useProgram(this.program);
 
@@ -735,9 +764,18 @@
         gl.uniform2f(this.uniforms.mouse, this.currentMouse.x, this.currentMouse.y);
 
         gl.drawArrays(gl.TRIANGLES, 0, 6);
+      } else if (this.panoramaReady && this.fallbackCtx) {
+        this._renderFallbackPanorama();
       }
 
-      this._renderOverlay(this.overlayCanvas.width, this.overlayCanvas.height, this.dpr);
+      // Never expose the placeholder texture or a different scene while decoding.
+      if (this.panoramaReady) {
+        this._renderOverlay(this.overlayCanvas.width, this.overlayCanvas.height, this.dpr);
+        if (this.wrapper.dataset.state !== 'ready') {
+          this.wrapper.dataset.state = 'ready';
+          this.wrapper.classList.add('is-ready');
+        }
+      }
       requestAnimationFrame(this._animate);
     }
 

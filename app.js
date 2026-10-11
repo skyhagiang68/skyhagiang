@@ -24,7 +24,6 @@ document.addEventListener('click', e => { if (!nav.contains(e.target)) closeMenu
 const updateNav = () => nav.classList.toggle('scrolled', scrollY > 40);
 addEventListener('scroll', updateNav, { passive: true });
 updateNav();
-const slides = [...document.querySelectorAll('.slides img')];
 document.querySelectorAll('main img').forEach(img => { img.loading = 'lazy'; img.decoding = 'async'; });
 document.querySelectorAll('img').forEach(img => {
   if (!img.alt) img.alt = img.closest('.brand') ? 'Sky Ha Giang Loop' : 'Mountain landscape';
@@ -32,20 +31,6 @@ document.querySelectorAll('img').forEach(img => {
   img.onerror = fallback;
   if (img.complete && !img.naturalWidth) fallback();
 });
-const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-let current = 0;
-slides[0].classList.add('active');
-let paused = false;
-function setMotion() {
-  document.body.classList.toggle('motion-paused', paused);
-}
-setMotion();
-setInterval(() => {
-  if (paused || document.hidden) return;
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
-}, 7000);
 document.querySelector('#form').addEventListener('submit', e => {
   e.preventDefault();
   const data = new FormData(e.currentTarget);
@@ -56,4 +41,3 @@ document.querySelector('#form').addEventListener('submit', e => {
   const status = document.querySelector('#status');
   status.replaceChildren('Your draft is ready. Send it from your email app: ', link);
 });
-

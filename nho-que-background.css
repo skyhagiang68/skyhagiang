@@ -1,6 +1,11 @@
-/* The supplied real-time landscape is now the sole page/hero backdrop. */
-body:before,body:after,.scene-bg,.atmosphere,.hero .slides,.story:before{display:none!important}
+/* One supplied panorama, from first paint onward; no legacy image layers. */
+html,body{background:#0a1d24!important}
+body::before,body::after{content:none!important}
 .hero{background:transparent!important}
 .hero:after{background:linear-gradient(90deg,#041e1d52,#062d2a12 68%),linear-gradient(0deg,#092e2a54,transparent 38%)!important}
 .skyhagiang-bg-wrapper{opacity:1;mix-blend-mode:normal}
-.skyhagiang-bg-wrapper canvas{pointer-events:none}
+.skyhagiang-bg-wrapper canvas{pointer-events:none;opacity:0;transition:opacity .35s ease}
+.skyhagiang-bg-wrapper.is-ready canvas{opacity:1}
+@media(prefers-reduced-motion:reduce){.skyhagiang-bg-wrapper canvas{transition:none}}
+.packages-page .packages-hero{background:#faf8f1f2;padding:22px;border:1px solid #ffffff99;border-radius:16px}
+.packages-page .packages-hero p{color:#526d61}
