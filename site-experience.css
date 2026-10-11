@@ -25,6 +25,7 @@
 .hero-facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;font-size:.76rem;color:#f4f1e6}
 .hero-facts span{padding:7px 10px;border:1px solid #ffffff40;border-radius:6px;background:#132a263b}
 .experience-home .section{padding:0;margin-top:24px;margin-bottom:0;width:100%}
+.experience-home main section[id]{scroll-margin-top:16px}
 .experience-home .compact-collection{background:#faf8f1f5;padding:22px;border-radius:14px}
 .experience-home .compact-collection .head{padding:0;background:transparent;border:0;box-shadow:none;margin-bottom:10px;align-items:center}
 .experience-home .compact-collection .head h2{font-size:clamp(1.8rem,3.5vw,2.8rem)}
